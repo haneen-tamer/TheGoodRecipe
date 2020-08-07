@@ -1,0 +1,9 @@
+F:\Uni\OODP\Project\TheGoodRecipe\obj\Debug\TheGoodRecipe.csprojAssemblyReference.cache
+F:\Uni\OODP\Project\TheGoodRecipe\obj\Debug\TheGoodRecipe.Properties.Resources.resources
+F:\Uni\OODP\Project\TheGoodRecipe\obj\Debug\TheGoodRecipe.csproj.GenerateResource.cache
+F:\Uni\OODP\Project\TheGoodRecipe\bin\Debug\TheGoodRecipe.exe.config
+F:\Uni\OODP\Project\TheGoodRecipe\bin\Debug\TheGoodRecipe.exe
+F:\Uni\OODP\Project\TheGoodRecipe\bin\Debug\TheGoodRecipe.pdb
+F:\Uni\OODP\Project\TheGoodRecipe\obj\Debug\TheGoodRecipe.exe
+F:\Uni\OODP\Project\TheGoodRecipe\obj\Debug\TheGoodRecipe.pdb
+F:\Uni\OODP\Project\TheGoodRecipe\obj\Debug\TheGoodRecipe.testForm.resources
