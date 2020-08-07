@@ -16,6 +16,7 @@ namespace TheGoodRecipe
         {//hi
             //hi(andrew)
             //hello
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

@@ -1,0 +1,10 @@
+C:\Users\andre\Documents\GitHub\TheGoodRecipe\bin\Debug\TheGoodRecipe.exe.config
+C:\Users\andre\Documents\GitHub\TheGoodRecipe\bin\Debug\TheGoodRecipe.exe
+C:\Users\andre\Documents\GitHub\TheGoodRecipe\bin\Debug\TheGoodRecipe.pdb
+C:\Users\andre\Documents\GitHub\TheGoodRecipe\obj\Debug\TheGoodRecipe.csprojAssemblyReference.cache
+C:\Users\andre\Documents\GitHub\TheGoodRecipe\obj\Debug\TheGoodRecipe.Properties.Resources.resources
+C:\Users\andre\Documents\GitHub\TheGoodRecipe\obj\Debug\TheGoodRecipe.csproj.GenerateResource.cache
+C:\Users\andre\Documents\GitHub\TheGoodRecipe\obj\Debug\TheGoodRecipe.csproj.CoreCompileInputs.cache
+C:\Users\andre\Documents\GitHub\TheGoodRecipe\obj\Debug\TheGoodRecipe.exe
+C:\Users\andre\Documents\GitHub\TheGoodRecipe\obj\Debug\TheGoodRecipe.pdb
+C:\Users\andre\Documents\GitHub\TheGoodRecipe\obj\Debug\TheGoodRecipe.Form1.resources
