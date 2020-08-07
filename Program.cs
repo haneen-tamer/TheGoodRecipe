@@ -14,6 +14,7 @@ namespace TheGoodRecipe
         [STAThread]
         static void Main()
         {//hi
+            //hi(andrew)
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
