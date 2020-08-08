@@ -91,6 +91,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="recipeForm.resx">
+      <DependentUpon>recipeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="testForm.resx">
       <DependentUpon>testForm.cs</DependentUpon>
     </EmbeddedResource>
