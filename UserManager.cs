@@ -76,7 +76,10 @@ namespace TheGoodRecipe
         
         public void setState(UserState us) { currentState = us; }
         public UserState getState() { return currentState; }
-        
+        public bool IsLoogedin()
+        {
+            return (currentState == loggedIn);
+        }
         public UserState getLoggedInState() { return loggedIn; }
         public UserState getLoggedOutState() { return loggedOut; }
         public void login(string username, string pass)
@@ -89,9 +92,9 @@ namespace TheGoodRecipe
             currentState.logout();
         }
 
-        public void postReview()
+        public void postReview(RecipeReviewStorageManager rm, RecipeReview rv)
         {
-            currentState.postReview();
+            currentState.postReview(rm,rv);
         }
 
         public void signUp(string username, string name, string pass)

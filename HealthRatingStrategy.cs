@@ -12,6 +12,7 @@ namespace TheGoodRecipe
         public double getRating()
         {
             // return Score.getHealthScore();
+            return 0;
         }
     }
 }
