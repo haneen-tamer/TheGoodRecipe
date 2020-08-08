@@ -18,6 +18,7 @@ namespace TheGoodRecipe
             //  else if(strategy - user)
             strategy = new UserRatingStrategy();
             strategy.getRating();
+            return 0;
         }
     }
 }

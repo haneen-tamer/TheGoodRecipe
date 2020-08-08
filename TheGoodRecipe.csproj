@@ -58,6 +58,11 @@
     <Compile Include="InvalidLoginException.cs" />
     <Compile Include="LoggedInState.cs" />
     <Compile Include="LoggedOutState.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs" />
+    <Compile Include="NotLoggedInException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RatingCalculator.cs" />
@@ -84,6 +89,7 @@
     <Compile Include="UserRatingStrategy.cs" />
     <Compile Include="UserState.cs" />
     <Compile Include="UserStorageManager.cs" />
+    <EmbeddedResource Include="LoginForm.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

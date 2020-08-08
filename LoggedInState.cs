@@ -24,9 +24,11 @@ namespace TheGoodRecipe
             um.setState(um.getLoggedOutState());
         }
 
-        public override void postReview()
+        public override void postReview(RecipeReviewStorageManager rm, RecipeReview rv)
         {
-            throw new NotImplementedException();
+            rv.setUsername(um.getCurrentUser().getUserName());
+            rm.AddRecipeReview(rv);
+
         }
 
         public override void signUp(string username, string name, string pass)

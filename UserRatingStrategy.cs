@@ -13,6 +13,7 @@ namespace TheGoodRecipe
         public double getRating()
         {
             // retutn Score.getRating();
+            return 0;
         }
     }
 }

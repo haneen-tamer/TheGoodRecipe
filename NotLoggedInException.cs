@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace TheGoodRecipe
 {
-    interface RecipeReviewStorageManager
+    class NotLoggedInException: Exception 
     {
-        void saveReviews();
-
-        void readReviews();
-        void AddRecipeReview(RecipeReview rv);
     }
 }

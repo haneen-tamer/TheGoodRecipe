@@ -32,9 +32,9 @@ namespace TheGoodRecipe
             throw new NotImplementedException("logout functionality not allowed in this state");
         }
 
-        public override void postReview()
+        public override void postReview(RecipeReviewStorageManager rm, RecipeReview rv)
         {
-            throw new NotImplementedException("post review functionality not allowed in this state");
+            throw new NotLoggedInException();
         }
 
         public override void signUp(string username, string name, string pass)

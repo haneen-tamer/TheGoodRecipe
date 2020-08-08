@@ -12,6 +12,6 @@ namespace TheGoodRecipe
         public abstract void login(string username, string pass);
         public abstract void signUp(string username, string name, string pass);
         public abstract void logout();
-        public abstract void postReview();
+        public abstract void postReview(RecipeReviewStorageManager rm, RecipeReview rv);
     }
 }

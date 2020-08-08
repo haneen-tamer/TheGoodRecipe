@@ -11,7 +11,8 @@ namespace TheGoodRecipe
         Recipe Score;
         public double getRating()
         {
-            //return Score.getHealthScore();
+            // return Score.getHealthScore();
+            return 0;
         }
     }
 }
