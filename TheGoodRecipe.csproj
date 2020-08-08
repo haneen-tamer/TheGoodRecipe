@@ -63,6 +63,7 @@
     <Compile Include="RatingCalculator.cs" />
     <Compile Include="RatingStrategy.cs" />
     <Compile Include="Recipe.cs" />
+    <Compile Include="RecipeBuilder.cs" />
     <Compile Include="recipeForm.cs">
       <SubType>Form</SubType>
     </Compile>
