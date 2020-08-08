@@ -12,10 +12,15 @@ namespace TheGoodRecipe
 {
     public partial class recipeForm : Form
     {
-        public recipeForm()
+        RecipeReviewManager rrm;
+        Recipe recipe;
+        public recipeForm(RecipeReviewManager rrm, Recipe recipe)
         {
             InitializeComponent();
+            this.rrm = rrm;
+            this.recipe = recipe;
         }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -58,6 +63,11 @@ namespace TheGoodRecipe
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void recipeForm_Load(object sender, EventArgs e)
         {
 
         }

@@ -7,7 +7,7 @@ using System.IO;
 
 namespace TheGoodRecipe
 {
-    class RecipeReviewManager : RecipeReviewStorageManager
+    public class RecipeReviewManager : RecipeReviewStorageManager
     {
         List<RecipeReview> allRecipeReviews;
         List<RecipeReview> showRecipeReviews;
