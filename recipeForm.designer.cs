@@ -80,7 +80,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(489, 82);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.Size = new System.Drawing.Size(69, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "RecipeName";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -99,7 +99,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(31, 253);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 13);
+            this.label3.Size = new System.Drawing.Size(84, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "ReadyInMinutes";
             // 
@@ -108,7 +108,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(31, 281);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 13);
+            this.label4.Size = new System.Drawing.Size(45, 13);
             this.label4.TabIndex = 5;
             this.label4.Text = "cuisines";
             // 
@@ -117,7 +117,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(246, 253);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 13);
+            this.label5.Size = new System.Drawing.Size(83, 13);
             this.label5.TabIndex = 6;
             this.label5.Text = "PricePerServing";
             // 
@@ -126,7 +126,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(246, 281);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.Size = new System.Drawing.Size(57, 13);
             this.label6.TabIndex = 7;
             this.label6.Text = "DishTypes";
             // 
@@ -185,7 +185,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(34, 362);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(62, 13);
+            this.label8.Size = new System.Drawing.Size(59, 13);
             this.label8.TabIndex = 14;
             this.label8.Text = "Ingredients";
             this.label8.Click += new System.EventHandler(this.label8_Click);
@@ -203,7 +203,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(331, 362);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(64, 13);
+            this.label9.Size = new System.Drawing.Size(61, 13);
             this.label9.TabIndex = 16;
             this.label9.Text = "Instructions";
             this.label9.Click += new System.EventHandler(this.label9_Click);
@@ -221,7 +221,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(31, 313);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(65, 13);
+            this.label11.Size = new System.Drawing.Size(66, 13);
             this.label11.TabIndex = 19;
             this.label11.Text = "HealthScore";
             // 
@@ -230,7 +230,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(456, 284);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(45, 13);
+            this.label12.Size = new System.Drawing.Size(44, 13);
             this.label12.TabIndex = 20;
             this.label12.Text = "Calories";
             // 
@@ -255,7 +255,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(34, 533);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(97, 13);
+            this.label10.Size = new System.Drawing.Size(96, 13);
             this.label10.TabIndex = 23;
             this.label10.Text = "NumberOfServings";
             // 
@@ -263,7 +263,6 @@
             // 
             this.textBox8.Location = new System.Drawing.Point(148, 530);
             this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(117, 20);
             this.textBox8.TabIndex = 24;
             // 
@@ -282,7 +281,7 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(51, 579);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(42, 13);
+            this.label13.Size = new System.Drawing.Size(43, 13);
             this.label13.TabIndex = 26;
             this.label13.Text = "Review";
             // 
