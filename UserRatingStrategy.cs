@@ -8,7 +8,7 @@ namespace TheGoodRecipe
 {
     class UserRatingStrategy : RatingStrategy
     {
-        // Recipe Score;
+        Recipe Score;
 
         public double getRating()
         {
