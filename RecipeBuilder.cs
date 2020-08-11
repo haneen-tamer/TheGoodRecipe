@@ -8,12 +8,24 @@ namespace TheGoodRecipe
 {
     public class RecipeBuilder : Builder
     {
-        Recipe GetResult() { }
+        private Recipe recipe;
 
-        void FetchRecipe(RecipeStorageManager) { }
+        public Recipe GetResult()
+        {
+            return this.recipe;
+        }
+        public void FetchRecipe(RecipeStorageManager manager)
+        {
 
-        void CalculateRating(RatingCalculator) { }
+        }
 
-        void GetReviews(RecipeReviewStorageManager) { }
+        public void CalculateRating(RatingCalculator calculator)
+        {
+            recipe.Rating = calculator.CalculateRating();
+        }
+
+        public void GetReviews(RecipeReviewStorageManager manager)
+        {
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TheGoodRecipe
 {
-    class RatingCalculator
+    public class RatingCalculator
     {
         RatingStrategy strategy;
 
