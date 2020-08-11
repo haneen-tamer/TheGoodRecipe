@@ -52,7 +52,7 @@
             this.txt_Calories = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_NumOfServings = new System.Windows.Forms.TextBox();
-            this.Calculate_inggredients_btn = new System.Windows.Forms.Button();
+            this.Calculate_ingredients_btn = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.Review_richTextBox = new System.Windows.Forms.RichTextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -68,6 +68,7 @@
             // 
             // picture_recipe
             // 
+            this.picture_recipe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picture_recipe.Location = new System.Drawing.Point(31, 12);
             this.picture_recipe.Name = "picture_recipe";
             this.picture_recipe.Size = new System.Drawing.Size(417, 219);
@@ -86,9 +87,10 @@
             // RecipeName
             // 
             this.RecipeName.AutoSize = true;
-            this.RecipeName.Location = new System.Drawing.Point(473, 22);
+            this.RecipeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RecipeName.Location = new System.Drawing.Point(469, 12);
             this.RecipeName.Name = "RecipeName";
-            this.RecipeName.Size = new System.Drawing.Size(69, 13);
+            this.RecipeName.Size = new System.Drawing.Size(234, 42);
             this.RecipeName.TabIndex = 2;
             this.RecipeName.Text = "RecipeName";
             this.RecipeName.Click += new System.EventHandler(this.label1_Click);
@@ -96,7 +98,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(473, 77);
+            this.label2.Location = new System.Drawing.Point(473, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 3;
@@ -275,15 +277,15 @@
             this.txt_NumOfServings.Size = new System.Drawing.Size(158, 20);
             this.txt_NumOfServings.TabIndex = 24;
             // 
-            // Calculate_inggredients_btn
+            // Calculate_ingredients_btn
             // 
-            this.Calculate_inggredients_btn.Location = new System.Drawing.Point(803, 506);
-            this.Calculate_inggredients_btn.Name = "Calculate_inggredients_btn";
-            this.Calculate_inggredients_btn.Size = new System.Drawing.Size(75, 23);
-            this.Calculate_inggredients_btn.TabIndex = 25;
-            this.Calculate_inggredients_btn.Text = "Calculate";
-            this.Calculate_inggredients_btn.UseVisualStyleBackColor = true;
-            this.Calculate_inggredients_btn.Click += new System.EventHandler(this.button2_Click);
+            this.Calculate_ingredients_btn.Location = new System.Drawing.Point(803, 506);
+            this.Calculate_ingredients_btn.Name = "Calculate_ingredients_btn";
+            this.Calculate_ingredients_btn.Size = new System.Drawing.Size(75, 23);
+            this.Calculate_ingredients_btn.TabIndex = 25;
+            this.Calculate_ingredients_btn.Text = "Calculate";
+            this.Calculate_ingredients_btn.UseVisualStyleBackColor = true;
+            this.Calculate_ingredients_btn.Click += new System.EventHandler(this.button2_Click);
             // 
             // label13
             // 
@@ -356,7 +358,7 @@
             // 
             // txt_rating
             // 
-            this.txt_rating.Location = new System.Drawing.Point(646, 110);
+            this.txt_rating.Location = new System.Drawing.Point(633, 111);
             this.txt_rating.Name = "txt_rating";
             this.txt_rating.ReadOnly = true;
             this.txt_rating.Size = new System.Drawing.Size(100, 20);
@@ -384,7 +386,7 @@
             this.Controls.Add(this.label14);
             this.Controls.Add(this.Review_richTextBox);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.Calculate_inggredients_btn);
+            this.Controls.Add(this.Calculate_ingredients_btn);
             this.Controls.Add(this.txt_NumOfServings);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txt_Calories);
@@ -445,7 +447,7 @@
         private System.Windows.Forms.TextBox txt_Calories;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txt_NumOfServings;
-        private System.Windows.Forms.Button Calculate_inggredients_btn;
+        private System.Windows.Forms.Button Calculate_ingredients_btn;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.RichTextBox Review_richTextBox;
         private System.Windows.Forms.Label label14;
