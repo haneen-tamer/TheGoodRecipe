@@ -29,7 +29,7 @@ namespace TheGoodRecipe
         public void readReviews()
         {
             allRecipeReviews = new List<RecipeReview>();
-            FileStream f = new FileStream(REVIEW_FILENAME, FileMode.Open);
+            FileStream f = new FileStream(REVIEW_FILENAME, FileMode.OpenOrCreate);
             StreamReader sr = new StreamReader(f);
             while(sr.Peek() != -1)
             {

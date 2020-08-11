@@ -11,11 +11,11 @@ namespace TheGoodRecipe
         #region Functions
         Recipe GetResult();
 
-        void FetchRecipe(RecipeStorageManager);
+        void FetchRecipe(RecipeStorageManager rsm);
 
-        void CalculateRating(RatingCalculator);
+        void CalculateRating(RatingCalculator rc);
 
-        void GetReviews(RecipeReviewStorageManager);
+        
 
         #endregion
     }

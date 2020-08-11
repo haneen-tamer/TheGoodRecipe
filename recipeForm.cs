@@ -20,6 +20,7 @@ namespace TheGoodRecipe
             InitializeComponent();
             this.rrm = rrm;
             this.recipe = recipe;
+           
         }
 
 
@@ -86,7 +87,7 @@ namespace TheGoodRecipe
             }
 
             all_reviews = rrm.getReviewsByRecipeID(recipe.ID1);
-            Reviews_dgv.ColumnCount=
+            //Reviews_dgv.ColumnCount=
             for (int i = 0; i < all_reviews.Count(); i++)
             {
 
@@ -95,7 +96,6 @@ namespace TheGoodRecipe
 
         private void label10_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

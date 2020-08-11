@@ -14,6 +14,7 @@ namespace TheGoodRecipe
     {
         RecipeReviewManager rrm;
         RecipeController recipeController;
+        RecipeStorageManager rsm;
         public Form1()
         {
             InitializeComponent();
@@ -37,6 +38,8 @@ namespace TheGoodRecipe
             UserManager.getInstance().readUsers();
             rrm = new RecipeReviewManager();
             rrm.readReviews();
+            rsm = new testRecipeStorage();
+            recipeController = new RecipeController(rsm.fetchRandomRecipes(), dgv1);
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
@@ -50,11 +53,24 @@ namespace TheGoodRecipe
             rrm.saveReviews();
         }
 
-        private void viewRecipeBtn_Click(object sender, EventArgs e)
+        //private void viewRecipeBtn_Click(object sender, EventArgs e)
+        //{
+        //    MessageBox.Show("selection " + dgv1.SelectedRows.Count);
+        //    recipeForm recipe = new recipeForm(rrm, recipeController.getSelectedRecipe());
+        //    recipe.Show();
+        //    this.Close();
+        //}
+
+        private void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            recipeForm recipe = new recipeForm(rrm, );
-            recipe.Show();
-            this.Close();
+            if (dgv1.Columns[e.ColumnIndex].Name == "ViewRecipeCol")
+            {
+                this.Hide();
+                recipeForm recipe = new recipeForm(rrm, recipeController.getSelectedRecipe());
+                recipe.Closed += (s, args) => this.Close();
+                recipe.Show();
+
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
