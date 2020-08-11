@@ -13,6 +13,7 @@ namespace TheGoodRecipe
     public partial class Form1 : Form
     {
         RecipeReviewManager rrm;
+        RecipeController recipeController;
         public Form1()
         {
             InitializeComponent();
