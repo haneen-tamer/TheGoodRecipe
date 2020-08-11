@@ -19,6 +19,7 @@ namespace TheGoodRecipe
             InitializeComponent();
             this.rrm = rrm;
             this.recipe = recipe;
+           
         }
 
 
@@ -69,7 +70,7 @@ namespace TheGoodRecipe
 
         private void recipeForm_Load(object sender, EventArgs e)
         {
-
+            label1.Text = recipe.Title;
         }
     }
 }

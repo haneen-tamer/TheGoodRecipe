@@ -24,8 +24,6 @@ namespace TheGoodRecipe
             recipe.Rating = calculator.CalculateRating();
         }
 
-        public void GetReviews(RecipeReviewStorageManager manager)
-        {
-        }
+        
     }
 }
