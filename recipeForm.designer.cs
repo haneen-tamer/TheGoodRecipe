@@ -28,427 +28,392 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picture_recipe = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.RecipeName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txt_ReadyInMinutes = new System.Windows.Forms.TextBox();
+            this.txt_cuisines = new System.Windows.Forms.TextBox();
+            this.txt_PricePerServing = new System.Windows.Forms.TextBox();
+            this.txt_DishTypes = new System.Windows.Forms.TextBox();
+            this.txt_Servings = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.list_ingredients = new System.Windows.Forms.ListBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.list_instructions = new System.Windows.Forms.ListBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txt_HealthScore = new System.Windows.Forms.TextBox();
+            this.txt_Calories = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txt_NumOfServings = new System.Windows.Forms.TextBox();
+            this.Calculate_inggredients_btn = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.Review_richTextBox = new System.Windows.Forms.RichTextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.PostView_btn = new System.Windows.Forms.Button();
+            this.back_btn = new System.Windows.Forms.Button();
+            this.UsersRatingradioBtn = new System.Windows.Forms.RadioButton();
+            this.HealthRatingradioBtn = new System.Windows.Forms.RadioButton();
+            this.txt_rating = new System.Windows.Forms.TextBox();
+            this.Reviews_dgv = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_recipe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Reviews_dgv)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // picture_recipe
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(46, 18);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(626, 337);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.picture_recipe.Location = new System.Drawing.Point(31, 12);
+            this.picture_recipe.Name = "picture_recipe";
+            this.picture_recipe.Size = new System.Drawing.Size(417, 219);
+            this.picture_recipe.TabIndex = 0;
+            this.picture_recipe.TabStop = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1304, 18);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Location = new System.Drawing.Point(869, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 35);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
             this.button1.Text = "Favourite";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // RecipeName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(710, 34);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "RecipeName";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.RecipeName.AutoSize = true;
+            this.RecipeName.Location = new System.Drawing.Point(473, 22);
+            this.RecipeName.Name = "RecipeName";
+            this.RecipeName.Size = new System.Drawing.Size(69, 13);
+            this.RecipeName.TabIndex = 2;
+            this.RecipeName.Text = "RecipeName";
+            this.RecipeName.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(710, 128);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(473, 77);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 20);
+            this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Rating";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(46, 389);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(31, 253);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 20);
+            this.label3.Size = new System.Drawing.Size(84, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "ReadyInMinutes";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(46, 432);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(31, 281);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 20);
+            this.label4.Size = new System.Drawing.Size(45, 13);
             this.label4.TabIndex = 5;
             this.label4.Text = "cuisines";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(369, 389);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(246, 253);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 20);
+            this.label5.Size = new System.Drawing.Size(83, 13);
             this.label5.TabIndex = 6;
             this.label5.Text = "PricePerServing";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(369, 432);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(246, 281);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 20);
+            this.label6.Size = new System.Drawing.Size(57, 13);
             this.label6.TabIndex = 7;
             this.label6.Text = "DishTypes";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(369, 477);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(246, 310);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 20);
+            this.label7.Size = new System.Drawing.Size(48, 13);
             this.label7.TabIndex = 8;
             this.label7.Text = "Servings";
             // 
-            // textBox1
+            // txt_ReadyInMinutes
             // 
-            this.textBox1.Location = new System.Drawing.Point(184, 389);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(148, 26);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txt_ReadyInMinutes.Location = new System.Drawing.Point(123, 253);
+            this.txt_ReadyInMinutes.Name = "txt_ReadyInMinutes";
+            this.txt_ReadyInMinutes.ReadOnly = true;
+            this.txt_ReadyInMinutes.Size = new System.Drawing.Size(100, 20);
+            this.txt_ReadyInMinutes.TabIndex = 9;
+            this.txt_ReadyInMinutes.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // txt_cuisines
             // 
-            this.textBox2.Location = new System.Drawing.Point(184, 432);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(148, 26);
-            this.textBox2.TabIndex = 10;
+            this.txt_cuisines.Location = new System.Drawing.Point(123, 281);
+            this.txt_cuisines.Name = "txt_cuisines";
+            this.txt_cuisines.ReadOnly = true;
+            this.txt_cuisines.Size = new System.Drawing.Size(100, 20);
+            this.txt_cuisines.TabIndex = 10;
             // 
-            // textBox3
+            // txt_PricePerServing
             // 
-            this.textBox3.Location = new System.Drawing.Point(501, 385);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(148, 26);
-            this.textBox3.TabIndex = 11;
+            this.txt_PricePerServing.Location = new System.Drawing.Point(334, 250);
+            this.txt_PricePerServing.Name = "txt_PricePerServing";
+            this.txt_PricePerServing.ReadOnly = true;
+            this.txt_PricePerServing.Size = new System.Drawing.Size(100, 20);
+            this.txt_PricePerServing.TabIndex = 11;
             // 
-            // textBox4
+            // txt_DishTypes
             // 
-            this.textBox4.Location = new System.Drawing.Point(501, 432);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(148, 26);
-            this.textBox4.TabIndex = 12;
+            this.txt_DishTypes.Location = new System.Drawing.Point(334, 281);
+            this.txt_DishTypes.Name = "txt_DishTypes";
+            this.txt_DishTypes.ReadOnly = true;
+            this.txt_DishTypes.Size = new System.Drawing.Size(100, 20);
+            this.txt_DishTypes.TabIndex = 12;
             // 
-            // textBox5
+            // txt_Servings
             // 
-            this.textBox5.Location = new System.Drawing.Point(501, 477);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(148, 26);
-            this.textBox5.TabIndex = 13;
+            this.txt_Servings.Location = new System.Drawing.Point(334, 310);
+            this.txt_Servings.Name = "txt_Servings";
+            this.txt_Servings.ReadOnly = true;
+            this.txt_Servings.Size = new System.Drawing.Size(100, 20);
+            this.txt_Servings.TabIndex = 13;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(46, 575);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(31, 374);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 20);
+            this.label8.Size = new System.Drawing.Size(59, 13);
             this.label8.TabIndex = 14;
             this.label8.Text = "Ingredients";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // listBox1
+            // list_ingredients
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(51, 600);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(276, 164);
-            this.listBox1.TabIndex = 15;
+            this.list_ingredients.FormattingEnabled = true;
+            this.list_ingredients.Location = new System.Drawing.Point(34, 390);
+            this.list_ingredients.Name = "list_ingredients";
+            this.list_ingredients.Size = new System.Drawing.Size(185, 108);
+            this.list_ingredients.TabIndex = 15;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(369, 575);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(246, 374);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(92, 20);
+            this.label9.Size = new System.Drawing.Size(61, 13);
             this.label9.TabIndex = 16;
             this.label9.Text = "Instructions";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // listBox2
+            // list_instructions
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 20;
-            this.listBox2.Location = new System.Drawing.Point(374, 600);
-            this.listBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(276, 164);
-            this.listBox2.TabIndex = 17;
+            this.list_instructions.FormattingEnabled = true;
+            this.list_instructions.Location = new System.Drawing.Point(249, 390);
+            this.list_instructions.Name = "list_instructions";
+            this.list_instructions.Size = new System.Drawing.Size(185, 108);
+            this.list_instructions.TabIndex = 17;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(46, 482);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(31, 313);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(98, 20);
+            this.label11.Size = new System.Drawing.Size(66, 13);
             this.label11.TabIndex = 19;
             this.label11.Text = "HealthScore";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(46, 531);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Location = new System.Drawing.Point(31, 345);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(66, 20);
+            this.label12.Size = new System.Drawing.Size(44, 13);
             this.label12.TabIndex = 20;
             this.label12.Text = "Calories";
             // 
-            // textBox6
+            // txt_HealthScore
             // 
-            this.textBox6.Location = new System.Drawing.Point(183, 477);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(150, 26);
-            this.textBox6.TabIndex = 21;
+            this.txt_HealthScore.Location = new System.Drawing.Point(122, 310);
+            this.txt_HealthScore.Name = "txt_HealthScore";
+            this.txt_HealthScore.ReadOnly = true;
+            this.txt_HealthScore.Size = new System.Drawing.Size(101, 20);
+            this.txt_HealthScore.TabIndex = 21;
             // 
-            // textBox7
+            // txt_Calories
             // 
-            this.textBox7.Location = new System.Drawing.Point(183, 526);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(148, 26);
-            this.textBox7.TabIndex = 22;
+            this.txt_Calories.Location = new System.Drawing.Point(122, 342);
+            this.txt_Calories.Name = "txt_Calories";
+            this.txt_Calories.ReadOnly = true;
+            this.txt_Calories.Size = new System.Drawing.Size(100, 20);
+            this.txt_Calories.TabIndex = 22;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(710, 794);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(473, 516);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(143, 20);
+            this.label10.Size = new System.Drawing.Size(96, 13);
             this.label10.TabIndex = 23;
             this.label10.Text = "NumberOfServings";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
-            // textBox8
+            // txt_NumOfServings
             // 
-            this.textBox8.Location = new System.Drawing.Point(862, 783);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(174, 26);
-            this.textBox8.TabIndex = 24;
+            this.txt_NumOfServings.Location = new System.Drawing.Point(575, 509);
+            this.txt_NumOfServings.Name = "txt_NumOfServings";
+            this.txt_NumOfServings.Size = new System.Drawing.Size(158, 20);
+            this.txt_NumOfServings.TabIndex = 24;
             // 
-            // button2
+            // Calculate_inggredients_btn
             // 
-            this.button2.Location = new System.Drawing.Point(1194, 778);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 35);
-            this.button2.TabIndex = 25;
-            this.button2.Text = "Calculate";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Calculate_inggredients_btn.Location = new System.Drawing.Point(803, 506);
+            this.Calculate_inggredients_btn.Name = "Calculate_inggredients_btn";
+            this.Calculate_inggredients_btn.Size = new System.Drawing.Size(75, 23);
+            this.Calculate_inggredients_btn.TabIndex = 25;
+            this.Calculate_inggredients_btn.Text = "Calculate";
+            this.Calculate_inggredients_btn.UseVisualStyleBackColor = true;
+            this.Calculate_inggredients_btn.Click += new System.EventHandler(this.button2_Click);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(46, 794);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Location = new System.Drawing.Point(31, 516);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(60, 20);
+            this.label13.Size = new System.Drawing.Size(43, 13);
             this.label13.TabIndex = 26;
             this.label13.Text = "Review";
             this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
-            // richTextBox1
+            // Review_richTextBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(51, 818);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(524, 146);
-            this.richTextBox1.TabIndex = 27;
-            this.richTextBox1.Text = "";
+            this.Review_richTextBox.Location = new System.Drawing.Point(34, 532);
+            this.Review_richTextBox.Name = "Review_richTextBox";
+            this.Review_richTextBox.Size = new System.Drawing.Size(351, 96);
+            this.Review_richTextBox.TabIndex = 27;
+            this.Review_richTextBox.Text = "";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(710, 275);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Location = new System.Drawing.Point(473, 179);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(122, 20);
+            this.label14.Size = new System.Drawing.Size(85, 13);
             this.label14.TabIndex = 28;
             this.label14.Text = "Recipe Reviews";
             // 
-            // listBox3
+            // PostView_btn
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 20;
-            this.listBox3.Location = new System.Drawing.Point(714, 300);
-            this.listBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(700, 464);
-            this.listBox3.TabIndex = 29;
+            this.PostView_btn.Location = new System.Drawing.Point(391, 605);
+            this.PostView_btn.Name = "PostView_btn";
+            this.PostView_btn.Size = new System.Drawing.Size(75, 23);
+            this.PostView_btn.TabIndex = 30;
+            this.PostView_btn.Text = "Post Review";
+            this.PostView_btn.UseVisualStyleBackColor = true;
+            this.PostView_btn.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button3
+            // back_btn
             // 
-            this.button3.Location = new System.Drawing.Point(586, 931);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 35);
-            this.button3.TabIndex = 30;
-            this.button3.Text = "Post Review";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.back_btn.Location = new System.Drawing.Point(869, 605);
+            this.back_btn.Name = "back_btn";
+            this.back_btn.Size = new System.Drawing.Size(75, 23);
+            this.back_btn.TabIndex = 31;
+            this.back_btn.Text = "Back";
+            this.back_btn.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // UsersRatingradioBtn
             // 
-            this.button4.Location = new System.Drawing.Point(1407, 948);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(112, 35);
-            this.button4.TabIndex = 31;
-            this.button4.Text = "Back";
-            this.button4.UseVisualStyleBackColor = true;
+            this.UsersRatingradioBtn.AutoSize = true;
+            this.UsersRatingradioBtn.Location = new System.Drawing.Point(476, 111);
+            this.UsersRatingradioBtn.Name = "UsersRatingradioBtn";
+            this.UsersRatingradioBtn.Size = new System.Drawing.Size(81, 17);
+            this.UsersRatingradioBtn.TabIndex = 32;
+            this.UsersRatingradioBtn.TabStop = true;
+            this.UsersRatingradioBtn.Text = "Users rating";
+            this.UsersRatingradioBtn.UseVisualStyleBackColor = true;
+            this.UsersRatingradioBtn.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // radioButton1
+            // HealthRatingradioBtn
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(714, 171);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(120, 24);
-            this.radioButton1.TabIndex = 32;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Users rating";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.HealthRatingradioBtn.AutoSize = true;
+            this.HealthRatingradioBtn.Location = new System.Drawing.Point(476, 134);
+            this.HealthRatingradioBtn.Name = "HealthRatingradioBtn";
+            this.HealthRatingradioBtn.Size = new System.Drawing.Size(90, 17);
+            this.HealthRatingradioBtn.TabIndex = 33;
+            this.HealthRatingradioBtn.TabStop = true;
+            this.HealthRatingradioBtn.Text = "Health Rating";
+            this.HealthRatingradioBtn.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // txt_rating
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(714, 206);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(132, 24);
-            this.radioButton2.TabIndex = 33;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Health Rating";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.txt_rating.Location = new System.Drawing.Point(646, 110);
+            this.txt_rating.Name = "txt_rating";
+            this.txt_rating.ReadOnly = true;
+            this.txt_rating.Size = new System.Drawing.Size(100, 20);
+            this.txt_rating.TabIndex = 34;
             // 
-            // textBox9
+            // Reviews_dgv
             // 
-            this.textBox9.Location = new System.Drawing.Point(969, 169);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(148, 26);
-            this.textBox9.TabIndex = 34;
+            this.Reviews_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Reviews_dgv.Location = new System.Drawing.Point(476, 196);
+            this.Reviews_dgv.Name = "Reviews_dgv";
+            this.Reviews_dgv.Size = new System.Drawing.Size(468, 287);
+            this.Reviews_dgv.TabIndex = 35;
             // 
             // recipeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1545, 1002);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.listBox3);
+            this.ClientSize = new System.Drawing.Size(966, 639);
+            this.Controls.Add(this.Reviews_dgv);
+            this.Controls.Add(this.txt_rating);
+            this.Controls.Add(this.HealthRatingradioBtn);
+            this.Controls.Add(this.UsersRatingradioBtn);
+            this.Controls.Add(this.back_btn);
+            this.Controls.Add(this.PostView_btn);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.Review_richTextBox);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.Calculate_inggredients_btn);
+            this.Controls.Add(this.txt_NumOfServings);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txt_Calories);
+            this.Controls.Add(this.txt_HealthScore);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.list_instructions);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.list_ingredients);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_Servings);
+            this.Controls.Add(this.txt_DishTypes);
+            this.Controls.Add(this.txt_PricePerServing);
+            this.Controls.Add(this.txt_cuisines);
+            this.Controls.Add(this.txt_ReadyInMinutes);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.RecipeName);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Controls.Add(this.picture_recipe);
             this.Name = "recipeForm";
             this.Text = "recipeForm";
             this.Load += new System.EventHandler(this.recipeForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_recipe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Reviews_dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -456,39 +421,39 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picture_recipe;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label RecipeName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txt_ReadyInMinutes;
+        private System.Windows.Forms.TextBox txt_cuisines;
+        private System.Windows.Forms.TextBox txt_PricePerServing;
+        private System.Windows.Forms.TextBox txt_DishTypes;
+        private System.Windows.Forms.TextBox txt_Servings;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox list_ingredients;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox list_instructions;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txt_HealthScore;
+        private System.Windows.Forms.TextBox txt_Calories;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txt_NumOfServings;
+        private System.Windows.Forms.Button Calculate_inggredients_btn;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox Review_richTextBox;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ListBox listBox3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Button PostView_btn;
+        private System.Windows.Forms.Button back_btn;
+        private System.Windows.Forms.RadioButton UsersRatingradioBtn;
+        private System.Windows.Forms.RadioButton HealthRatingradioBtn;
+        private System.Windows.Forms.TextBox txt_rating;
+        private System.Windows.Forms.DataGridView Reviews_dgv;
     }
 }

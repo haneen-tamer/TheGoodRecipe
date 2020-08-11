@@ -31,10 +31,10 @@
             this.loginBtn = new System.Windows.Forms.Button();
             this.dgv1 = new System.Windows.Forms.DataGridView();
             this.panel = new System.Windows.Forms.Panel();
+            this.backBtn = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.searchBtn = new System.Windows.Forms.Button();
             this.searchedRecipeTxt = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.backBtn = new System.Windows.Forms.Button();
             this.viewRecipeBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.panel.SuspendLayout();
@@ -43,9 +43,10 @@
             // 
             // loginBtn
             // 
-            this.loginBtn.Location = new System.Drawing.Point(644, 12);
+            this.loginBtn.Location = new System.Drawing.Point(429, 8);
+            this.loginBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(167, 36);
+            this.loginBtn.Size = new System.Drawing.Size(111, 23);
             this.loginBtn.TabIndex = 3;
             this.loginBtn.Text = "Login";
             this.loginBtn.UseVisualStyleBackColor = true;
@@ -54,27 +55,53 @@
             // dgv1
             // 
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv1.Location = new System.Drawing.Point(73, 151);
+            this.dgv1.Location = new System.Drawing.Point(49, 98);
+            this.dgv1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgv1.Name = "dgv1";
             this.dgv1.RowHeadersWidth = 62;
             this.dgv1.RowTemplate.Height = 28;
-            this.dgv1.Size = new System.Drawing.Size(738, 343);
+            this.dgv1.Size = new System.Drawing.Size(492, 223);
             this.dgv1.TabIndex = 5;
             // 
             // panel
             // 
             this.panel.Controls.Add(this.backBtn);
             this.panel.Controls.Add(this.dataGridView1);
-            this.panel.Location = new System.Drawing.Point(35, 107);
+            this.panel.Location = new System.Drawing.Point(27, 66);
+            this.panel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(796, 421);
+            this.panel.Size = new System.Drawing.Size(531, 274);
             this.panel.TabIndex = 6;
+            // 
+            // backBtn
+            // 
+            this.backBtn.Location = new System.Drawing.Point(430, 8);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(71, 23);
+            this.backBtn.TabIndex = 1;
+            this.backBtn.Text = "Back";
+            this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(11, 8);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(391, 257);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // searchBtn
             // 
-            this.searchBtn.Location = new System.Drawing.Point(250, 26);
+            this.searchBtn.Location = new System.Drawing.Point(167, 17);
+            this.searchBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(151, 31);
+            this.searchBtn.Size = new System.Drawing.Size(101, 20);
             this.searchBtn.TabIndex = 7;
             this.searchBtn.Text = "Search Recipe";
             this.searchBtn.UseVisualStyleBackColor = true;
@@ -82,36 +109,18 @@
             // 
             // searchedRecipeTxt
             // 
-            this.searchedRecipeTxt.Location = new System.Drawing.Point(82, 31);
+            this.searchedRecipeTxt.Location = new System.Drawing.Point(55, 20);
+            this.searchedRecipeTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.searchedRecipeTxt.Name = "searchedRecipeTxt";
-            this.searchedRecipeTxt.Size = new System.Drawing.Size(141, 26);
+            this.searchedRecipeTxt.Size = new System.Drawing.Size(95, 20);
             this.searchedRecipeTxt.TabIndex = 8;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 13);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(587, 395);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // backBtn
-            // 
-            this.backBtn.Location = new System.Drawing.Point(645, 13);
-            this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(107, 36);
-            this.backBtn.TabIndex = 1;
-            this.backBtn.Text = "Back";
-            this.backBtn.UseVisualStyleBackColor = true;
-            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // viewRecipeBtn
             // 
-            this.viewRecipeBtn.Location = new System.Drawing.Point(644, 54);
+            this.viewRecipeBtn.Location = new System.Drawing.Point(429, 35);
+            this.viewRecipeBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.viewRecipeBtn.Name = "viewRecipeBtn";
-            this.viewRecipeBtn.Size = new System.Drawing.Size(167, 36);
+            this.viewRecipeBtn.Size = new System.Drawing.Size(111, 23);
             this.viewRecipeBtn.TabIndex = 9;
             this.viewRecipeBtn.Text = "View Recipe";
             this.viewRecipeBtn.UseVisualStyleBackColor = true;
@@ -119,15 +128,16 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 540);
+            this.ClientSize = new System.Drawing.Size(569, 351);
             this.Controls.Add(this.viewRecipeBtn);
             this.Controls.Add(this.searchedRecipeTxt);
             this.Controls.Add(this.searchBtn);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.dgv1);
             this.Controls.Add(this.loginBtn);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);

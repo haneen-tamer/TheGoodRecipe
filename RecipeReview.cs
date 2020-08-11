@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TheGoodRecipe
 {
-    class RecipeReview
+    public class RecipeReview
     {
         string userName;
         int recipeID;
