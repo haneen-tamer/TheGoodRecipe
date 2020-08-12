@@ -71,14 +71,18 @@ namespace TheGoodRecipe
 
         private void recipeForm_Load(object sender, EventArgs e)
         {
+            //cuisine
+            //dishtype
             //image
             //Star rating
             //radiobtn ratings
 
             RecipeName.Text = recipe.Title;
-            picture_recipe.ImageLocation = recipe.ImageURL;
-            txt_SourceURL.Text = recipe.SourceURL;
-            txt_publisher.Text = recipe.SourceName;
+            txt_ReadyInMinutes.Text = recipe.ReadyInMinutes.ToString();
+            txt_PricePerServing.Text = recipe.PricePerServing.ToString();
+            txt_Calories.Text = recipe.Calories.ToString();
+            txt_HealthScore.Text = recipe.HealthScore.ToString();
+            txt_Servings.Text = recipe.Servings.ToString();
             for (int i=0;i<recipe.Ingredients.Count();i++)
             {
                 list_ingredients.Items.Add(recipe.Ingredients[i]);
