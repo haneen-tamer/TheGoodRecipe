@@ -13,7 +13,8 @@ namespace TheGoodRecipe
 {
     class RecipesAPIHelper : RecipeStorageManager
     {
-        private const string API_KEY = "df8c0251c12449a295a5c7b76c95b756";
+       // private const string API_KEY = "df8c0251c12449a295a5c7b76c95b756";
+        private const string API_KEY = "ffcc9445764c4caea745dbe6155eef80"; 
         public List<Recipe> fetchRandomRecipes()
         {
             List<Recipe> rl = new List<Recipe>();

@@ -355,6 +355,7 @@
             this.HealthRatingradioBtn.TabStop = true;
             this.HealthRatingradioBtn.Text = "Health Rating";
             this.HealthRatingradioBtn.UseVisualStyleBackColor = true;
+            this.HealthRatingradioBtn.CheckedChanged += new System.EventHandler(this.HealthRatingradioBtn_CheckedChanged);
             // 
             // txt_rating
             // 

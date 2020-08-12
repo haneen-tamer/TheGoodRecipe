@@ -65,11 +65,6 @@ namespace TheGoodRecipe
 
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void recipeForm_Load(object sender, EventArgs e)
         {
             //cuisine
@@ -112,20 +107,21 @@ namespace TheGoodRecipe
 
                 Reviews_dgv.Rows.Add(row.ToArray());
             }
-            if(UsersRatingradioBtn.Checked)
-            {
-                rate = new UserRatingStrategy();
-                txt_rating.Text = rate.getRating(recipe).ToString();
-            }
-            else if(HealthRatingradioBtn.Checked)
-            {
-                rate = new HealthRatingStrategy();
-                txt_rating.Text = rate.getRating(recipe).ToString();
-            }
         }
 
         private void label10_Click(object sender, EventArgs e)
         {
+        }
+
+        private void HealthRatingradioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            rate = new HealthRatingStrategy();
+            txt_rating.Text = rate.getRating(recipe).ToString();
+        }
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            rate = new UserRatingStrategy();
+            txt_rating.Text = rate.getRating(recipe).ToString();
         }
     }
 }
