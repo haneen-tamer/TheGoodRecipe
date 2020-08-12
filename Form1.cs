@@ -30,6 +30,8 @@ namespace TheGoodRecipe
         private void backBtn_Click(object sender, EventArgs e)
         {
             panel.Hide();
+            recipeController = new RecipeController(rsm.fetchRandomRecipes(), dgv1);
+            searchedRecipeTxt.Clear();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -38,13 +40,15 @@ namespace TheGoodRecipe
             UserManager.getInstance().readUsers();
             rrm = new RecipeReviewManager();
             rrm.readReviews();
-            rsm = new testRecipeStorage();
+            rsm = new RecipesAPIHelper();
             recipeController = new RecipeController(rsm.fetchRandomRecipes(), dgv1);
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
+            recipeController = new RecipeController(rsm.searchRecipes(searchedRecipeTxt.Text), dgvSearch);
             panel.Show();
+
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -53,20 +57,13 @@ namespace TheGoodRecipe
             rrm.saveReviews();
         }
 
-        //private void viewRecipeBtn_Click(object sender, EventArgs e)
-        //{
-        //    MessageBox.Show("selection " + dgv1.SelectedRows.Count);
-        //    recipeForm recipe = new recipeForm(rrm, recipeController.getSelectedRecipe());
-        //    recipe.Show();
-        //    this.Close();
-        //}
 
         private void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgv1.Columns[e.ColumnIndex].Name == "ViewRecipeCol")
             {
                 this.Hide();
-                recipeForm recipe = new recipeForm(rrm, recipeController.getSelectedRecipe());
+                recipeForm recipe = new recipeForm(rrm, rsm.fetchRecipe(recipeController.getSelectedRecipe().ID1));
                 recipe.Closed += (s, args) => this.Close();
                 recipe.Show();
 
@@ -76,6 +73,18 @@ namespace TheGoodRecipe
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dgvSearch_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvSearch.Columns[e.ColumnIndex].Name == "sViewRecipeCol")
+            {
+                this.Hide();
+                recipeForm recipe = new recipeForm(rrm, rsm.fetchRecipe(recipeController.getSelectedRecipe().ID1));
+                recipe.Closed += (s, args) => this.Close();
+                recipe.Show();
+
+            }
         }
     }
 }

@@ -87,10 +87,10 @@ namespace TheGoodRecipe
             {
                 list_ingredients.Items.Add(recipe.Ingredients[i]);
             }
-            for (int i = 0; i < recipe.Instructions.Count(); i++)
-            {
-                list_instructions.Items.Add(recipe.Instructions[i]);
-            }
+            //for (int i = 0; i < recipe.Instructions.Count(); i++)
+            //{
+            //    list_instructions.Items.Add(recipe.Instructions[i]);
+            //}
 
             all_reviews = rrm.getReviewsByRecipeID(recipe.ID1);
 

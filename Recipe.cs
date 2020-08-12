@@ -9,7 +9,7 @@ namespace TheGoodRecipe
     public class Recipe
     {
         #region Variables
-        private int ID;
+        private string ID;
         private int servings;
         private int readyInMinutes;
         private String title;
@@ -21,13 +21,13 @@ namespace TheGoodRecipe
         private float calories;
         private float pricePerServing;
         private String imageURL;
-        private Ingredient[] ingredients;
+        private string[] ingredients;
         //private Cuisines cuisines;
         //private Dishtypes dishTypes;
         #endregion
 
         #region Getters and Setters
-        public int ID1 { get => ID; set => ID = value; }
+        public string ID1 { get => ID; set => ID = value; }
         public int Servings { get => servings; set => servings = value; }
         public int ReadyInMinutes { get => readyInMinutes; set => readyInMinutes = value; }
         public string Title { get => title; set => title = value; }
@@ -39,7 +39,7 @@ namespace TheGoodRecipe
         public float Calories { get => calories; set => calories = value; }
         public float PricePerServing { get => pricePerServing; set => pricePerServing = value; }
         public string ImageURL { get => imageURL; set => imageURL = value; }
-        public Ingredient[] Ingredients { get => ingredients; set => ingredients = value; }
+        public string[] Ingredients { get => ingredients; set => ingredients = value; }
         #endregion
 
     }

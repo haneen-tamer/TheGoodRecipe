@@ -9,12 +9,12 @@ namespace TheGoodRecipe
     public class RecipeReview
     {
         string userName;
-        int recipeID;
+        string recipeID;
         string reviewText;
         DateTime timeStamp;
         double starRating;
 
-        public RecipeReview(string userName, int recipeID, string reviewText, DateTime timeStamp, double starRating)
+        public RecipeReview(string userName, string recipeID, string reviewText, DateTime timeStamp, double starRating)
         {
             this.userName = userName;
             this.recipeID = recipeID;
@@ -33,12 +33,12 @@ namespace TheGoodRecipe
             return userName;
         }
 
-        public void setrecipeID(int recipeid)
+        public void setrecipeID(string recipeid)
         {
             this.recipeID = recipeid;
         }
 
-        public int getrecipeID()
+        public string getrecipeID()
         {
             return recipeID;
         }

@@ -20,7 +20,7 @@ namespace TheGoodRecipe
             return r;
         }
 
-        public Recipe fetchRecipe(int id)
+        public Recipe fetchRecipe(string id)
         {
             throw new NotImplementedException();
         }

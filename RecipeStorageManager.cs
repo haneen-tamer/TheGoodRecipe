@@ -8,7 +8,7 @@ namespace TheGoodRecipe
 {
     public interface RecipeStorageManager
     {
-        Recipe fetchRecipe(int id);
+        Recipe fetchRecipe(string id);
         List<Recipe> fetchRandomRecipes();
         List<Recipe> searchRecipes(string query);
     }

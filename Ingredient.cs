@@ -12,7 +12,6 @@ namespace TheGoodRecipe
         private int ID;
         private String unit;
         private String name;
-        private float price;
         private float amount;
         #endregion
 
@@ -20,7 +19,6 @@ namespace TheGoodRecipe
         public int ID1 { get => ID; set => ID = value; }
         public string Unit { get => unit; set => unit = value; }
         public string Name { get => name; set => name = value; }
-        public float Price { get => price; set => price = value; }
         public float Amount { get => amount; set => amount = value; }
         #endregion
 

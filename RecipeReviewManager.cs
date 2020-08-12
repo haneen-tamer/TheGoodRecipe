@@ -35,18 +35,18 @@ namespace TheGoodRecipe
             {
                 string line = sr.ReadLine();
                 string[] line_var = line.Split(',');
-                allRecipeReviews.Add(new RecipeReview(line_var[0], int.Parse(line_var[1]), line_var[2], DateTime.Parse(line_var[3]), double.Parse(line_var[4])));
+                allRecipeReviews.Add(new RecipeReview(line_var[0], line_var[1], line_var[2], DateTime.Parse(line_var[3]), double.Parse(line_var[4])));
             }
             sr.Close();
             f.Close();
         }
 
-        public List<RecipeReview> getReviewsByRecipeID(int id)
+        public List<RecipeReview> getReviewsByRecipeID(string id)
         {
             showRecipeReviews = new List<RecipeReview>();
             foreach(RecipeReview r in allRecipeReviews)
             {
-                if (r.getrecipeID() == id)
+                if (r.getrecipeID().Equals( id))
                     showRecipeReviews.Add(r);
             }
             return showRecipeReviews;
