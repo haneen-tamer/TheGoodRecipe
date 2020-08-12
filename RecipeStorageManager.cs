@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net;
 
 namespace TheGoodRecipe
 {
     public interface RecipeStorageManager
     {
-        Recipe fetchRecipe(string id);
-        List<Recipe> fetchRandomRecipes();
-        List<Recipe> searchRecipes(string query);
+        Task<Recipe> fetchRecipeAsync(string id);
+        Task<List<Recipe>> fetchRandomRecipesAsync();
+        Task<List<Recipe>> searchRecipesAsync(string query);
     }
 }

@@ -33,17 +33,18 @@ namespace TheGoodRecipe
                 dgv.Columns[i+1].Name = columns[i];
             }
             
-            for (int i=0; i<recipeList.Count; i++)
+            for (int i=0; i< this.recipeList.Count; i++)
             {
                 List<string> row = new List<string>();
                 row.Add("");
-                row.Add(recipeList[i].Title);
-                row.Add(recipeList[i].Rating.ToString());
-                row.Add(recipeList[i].ReadyInMinutes.ToString());
+                row.Add(this.recipeList[i].Title);
+                row.Add(this.recipeList[i].Rating.ToString());
+                row.Add(this.recipeList[i].ReadyInMinutes.ToString());
 
                 dgv.Rows.Add(row.ToArray());
 
             }
+            MessageBox.Show("here");
             //BindingSource bindingSource1 = new BindingSource();
             //bindingSource1.DataSource = recipeList;
             //dgv.DataSource = bindingSource1;

@@ -98,7 +98,6 @@
     <Compile Include="testForm.Designer.cs">
       <DependentUpon>testForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="testRecipeStorage.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserManager.cs" />
     <Compile Include="UserRatingStrategy.cs" />

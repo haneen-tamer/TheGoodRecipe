@@ -37,6 +37,7 @@
             this.sViewRecipeCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.searchBtn = new System.Windows.Forms.Button();
             this.searchedRecipeTxt = new System.Windows.Forms.TextBox();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
@@ -149,11 +150,19 @@
             this.searchedRecipeTxt.Size = new System.Drawing.Size(126, 22);
             this.searchedRecipeTxt.TabIndex = 8;
             // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(73, 79);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(503, 23);
+            this.progressBar.TabIndex = 9;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(906, 548);
+            this.Controls.Add(this.progressBar);
             this.Controls.Add(this.searchedRecipeTxt);
             this.Controls.Add(this.searchBtn);
             this.Controls.Add(this.panel);
@@ -182,6 +191,7 @@
         private System.Windows.Forms.DataGridView dgvSearch;
         private System.Windows.Forms.DataGridViewButtonColumn ViewRecipeCol;
         private System.Windows.Forms.DataGridViewButtonColumn sViewRecipeCol;
+        private System.Windows.Forms.ProgressBar progressBar;
     }
 }
 
