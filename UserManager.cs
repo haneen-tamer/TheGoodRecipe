@@ -104,7 +104,7 @@ namespace TheGoodRecipe
         public void readUsers()
         {
             allUsers = new List<User>();
-            FileStream f = new FileStream(USER_FILENAME, FileMode.Open);
+            FileStream f = new FileStream(USER_FILENAME, FileMode.OpenOrCreate);
             StreamReader sr = new StreamReader(f);
             while (sr.Peek() >-1)
             {

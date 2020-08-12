@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace TheGoodRecipe
 {
-    interface RatingStrategy
+    public interface RatingStrategy
     {
-        double getRating();
+        double getRating(Recipe r);
     }
 }

@@ -14,6 +14,7 @@ namespace TheGoodRecipe
     {
         RecipeReviewManager rrm;
         Recipe recipe;
+        RatingStrategy rate;
         List <RecipeReview> all_reviews;
         public recipeForm(RecipeReviewManager rrm, Recipe recipe)
         {
@@ -64,11 +65,6 @@ namespace TheGoodRecipe
 
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void recipeForm_Load(object sender, EventArgs e)
         {
             //cuisine
@@ -115,6 +111,17 @@ namespace TheGoodRecipe
 
         private void label10_Click(object sender, EventArgs e)
         {
+        }
+
+        private void HealthRatingradioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            rate = new HealthRatingStrategy();
+            txt_rating.Text = rate.getRating(recipe).ToString();
+        }
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            rate = new UserRatingStrategy();
+            txt_rating.Text = rate.getRating(recipe).ToString();
         }
     }
 }

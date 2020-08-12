@@ -8,12 +8,10 @@ namespace TheGoodRecipe
 {
     class UserRatingStrategy : RatingStrategy
     {
-        Recipe Score;
 
-        public double getRating()
+        public double getRating(Recipe r)
         {
-            // retutn Score.getRating();
-            return 0;
+            return r.getLikes();
         }
     }
 }
