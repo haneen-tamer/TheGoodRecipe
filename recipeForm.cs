@@ -14,6 +14,7 @@ namespace TheGoodRecipe
     {
         RecipeReviewManager rrm;
         Recipe recipe;
+        RatingStrategy rate;
         List <RecipeReview> all_reviews;
         public recipeForm(RecipeReviewManager rrm, Recipe recipe)
         {
@@ -110,6 +111,16 @@ namespace TheGoodRecipe
                 row.Add(all_reviews[i].getstarRating().ToString());
 
                 Reviews_dgv.Rows.Add(row.ToArray());
+            }
+            if(UsersRatingradioBtn.Checked)
+            {
+                rate = new UserRatingStrategy();
+                txt_rating.Text = rate.getRating(recipe).ToString();
+            }
+            else if(HealthRatingradioBtn.Checked)
+            {
+                rate = new HealthRatingStrategy();
+                txt_rating.Text = rate.getRating(recipe).ToString();
             }
         }
 

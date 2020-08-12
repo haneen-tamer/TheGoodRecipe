@@ -21,7 +21,7 @@ namespace TheGoodRecipe
 
         public void CalculateRating(RatingCalculator calculator)
         {
-            recipe.Rating = calculator.CalculateRating();
+           // recipe.Rating = calculator.CalculateRating();
         }
 
         

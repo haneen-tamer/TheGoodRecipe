@@ -8,11 +8,10 @@ namespace TheGoodRecipe
 {
     class HealthRatingStrategy : RatingStrategy
     {
-        Recipe Score;
-        public double getRating()
+
+        public double getRating(Recipe r)
         {
-            // return Score.getHealthScore();
-            return 0;
+            return r.HealthScore;
         }
     }
 }

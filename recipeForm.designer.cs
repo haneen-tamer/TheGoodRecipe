@@ -71,13 +71,13 @@
             this.picture_recipe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picture_recipe.Location = new System.Drawing.Point(31, 12);
             this.picture_recipe.Name = "picture_recipe";
-            this.picture_recipe.Size = new System.Drawing.Size(417, 219);
+            this.picture_recipe.Size = new System.Drawing.Size(403, 219);
             this.picture_recipe.TabIndex = 0;
             this.picture_recipe.TabStop = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(869, 12);
+            this.button1.Location = new System.Drawing.Point(869, 53);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;

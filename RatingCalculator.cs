@@ -10,15 +10,9 @@ namespace TheGoodRecipe
     {
         RatingStrategy strategy;
 
-        public double CalculateRating()
-        {
-            // if(strategy - health)
-            strategy = new HealthRatingStrategy();
-            strategy.getRating();
-            //  else if(strategy - user)
-            strategy = new UserRatingStrategy();
-            strategy.getRating();
-            return 0;
-        }
+        //public double CalculateRating()
+        //{
+
+        //}
     }
 }
