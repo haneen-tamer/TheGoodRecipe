@@ -13,15 +13,63 @@ namespace TheGoodRecipe
 {
     class RecipesAPIHelper : RecipeStorageManager
     {
+        private const string API_KEY = "df8c0251c12449a295a5c7b76c95b756";
         public List<Recipe> fetchRandomRecipes()
         {
-            return this.searchRecipes("");
+            List<Recipe> rl = new List<Recipe>();
+            for (int c = 0; c < 5; c++)
+            {
+                WebRequest request = WebRequest.Create("https://api.spoonacular.com/recipes/random" +
+                    "?apiKey=" + API_KEY);
+                request.Credentials = CredentialCache.DefaultCredentials;
+                try
+                {
+                    WebResponse response = request.GetResponse();
+                    //Console.WriteLine(((HttpWebResponse)response).StatusDescription);
+                    //TODO CHeck response status
+                    using (Stream dataStream = response.GetResponseStream())
+                    {
+                        // Open the stream using a StreamReader for easy access.
+                        StreamReader sreader = new StreamReader(dataStream);
+                        // Read the content.
+                        string responseFromServer = sreader.ReadToEnd();
+                        //parse json object
+                        JToken outer = JToken.Parse(responseFromServer);
+                        JArray inner = outer["recipes"].Value<JArray>();
+                        Recipe r;
+                        for (int i = 0; i < inner.Count; i++)
+                        {
+                            JObject rec = inner[i].Value<JObject>();
+                            r = new Recipe();
+                            r.Title = rec["title"].ToString();
+                            r.ID1 = rec["id"].ToString();
+                            r.ImageURL = rec["image"].ToString();
+                            //r.SourceName = rec["sourceName"].ToString();
+                            //r.SourceURL = rec["sourceUrl"].ToString();
+                            r.Rating = double.Parse(rec["spoonacularScore"].ToString());
+                            r.ReadyInMinutes = int.Parse(rec["readyInMinutes"].ToString());
+
+                            rl.Add(r);
+                        }
+
+                    }
+                    response.Close();
+                }
+
+                catch (Exception e)
+                {
+                    MessageBox.Show("Line: " + e.Source + "/nMessage:" + e.Message + "/nStacktrace/n" + e.StackTrace);
+                }
+            }
+
+            return rl;
         }
 
         public Recipe fetchRecipe(string id)
         {
             Recipe r = new Recipe();
-            WebRequest request = WebRequest.Create("https://recipesapi.herokuapp.com/api/get?rId="+id);
+            WebRequest request = WebRequest.Create("https://api.spoonacular.com/recipes/"+id+"/information?" +
+                "apiKey="+API_KEY+ "&includeNutrition=true");
             request.Credentials = CredentialCache.DefaultCredentials;
             try
             {
@@ -35,21 +83,35 @@ namespace TheGoodRecipe
                     // Read the content.
                     string responseFromServer = sreader.ReadToEnd();
                     //parse json object
-                    JToken outer = JToken.Parse(responseFromServer);
-                    JObject inner = outer["recipe"].Value<JObject>();
-                    r.Title = inner["title"].ToString();
-                    r.ID1 = inner["recipe_id"].ToString();
-                    r.ImageURL = inner["image_url"].ToString();
-                    r.SourceName = inner["publisher"].ToString();
-                    r.SourceURL = inner["source_url"].ToString();
-                    r.Rating = double.Parse( inner["social_rank"].ToString());
-                    JArray ingredients = inner["ingredients"].Value<JArray>();
-                    r.Ingredients = new string[ingredients.Count];
+                    JToken rec = JToken.Parse(responseFromServer);
+                    r.Title = rec["title"].ToString();
+                    r.ID1 = rec["id"].ToString();
+                    r.ImageURL = rec["image"].ToString();
+                    r.SourceName = rec["sourceName"].ToString();
+                    r.SourceURL = rec["sourceUrl"].ToString();
+                    r.Rating = double.Parse(rec["spoonacularScore"].ToString());
+                    r.ReadyInMinutes = int.Parse(rec["readyInMinutes"].ToString());
+                    r.HealthScore = double.Parse(rec["healthScore"].ToString());
+                    r.PricePerServing = float.Parse(rec["pricePerServing"].ToString());
+                    r.Servings = int.Parse(rec["servings"].ToString());
+                    r.setLikes( int.Parse(rec["aggregateLikes"].ToString()));
+                    JArray ingredients = rec["extendedIngredients"].Value<JArray>();
+                    r.Ingredients = new Ingredient[ingredients.Count];
                     for (int i = 0; i < ingredients.Count; i++)
                     {
-                        r.Ingredients[i] = ingredients[i].ToString();
+                        JObject ing = ingredients[i].Value<JObject>();
+                        Ingredient x = new Ingredient();
+                        x.ID1 = int.Parse(ing["id"].ToString());
+                        x.Amount = float.Parse(ing["amount"].ToString());
+                        x.Unit = ing["unit"].ToString();
+                        x.Name = ing["name"].ToString();
+                        r.Ingredients[i] = x;
                     }
 
+                    r.Instructions = new List<string>();
+                    r.Instructions.Add(rec["instructions"].ToString());//TODO split instructions
+                    
+                    
                 }
                 response.Close();
             }catch(Exception e)
@@ -63,8 +125,9 @@ namespace TheGoodRecipe
         public List<Recipe> searchRecipes(string query)
         {
             List<Recipe> rl = new List<Recipe>();
-            query.Replace(" ", "%20");
-            WebRequest request = WebRequest.Create("https://recipesapi.herokuapp.com/api/search?q=" + query);
+            query = query.Replace(" ", "%20");
+            WebRequest request = WebRequest.Create("https://api.spoonacular.com/recipes/complexSearch?apiKey=" +
+                API_KEY + "&query="+ query);
             request.Credentials = CredentialCache.DefaultCredentials;
             try
             {
@@ -79,32 +142,28 @@ namespace TheGoodRecipe
                     string responseFromServer = sreader.ReadToEnd();
                     //parse json object
                     JToken outer = JToken.Parse(responseFromServer);
-                    JArray inner = outer["recipes"].Value<JArray>();
-                    int count = int.Parse(outer["count"].ToString());
+                    JArray inner = outer["results"].Value<JArray>();
                     Recipe r;
-                    for (int i = 0; i < count; i++)
+                    for (int i = 0; i < inner.Count; i++)
                     {
                         JObject rec = inner[i].Value<JObject>();
                         r = new Recipe();
                         r.Title = rec["title"].ToString();
-                        r.ID1 = rec["recipe_id"].ToString();
-                        r.ImageURL = rec["image_url"].ToString();
-                        r.SourceName = rec["publisher"].ToString();
-                        r.SourceURL = rec["source_url"].ToString();
-                        r.Rating = double.Parse(rec["social_rank"].ToString());
+                        r.ID1 = rec["id"].ToString();
+                        r.ImageURL = rec["image"].ToString();
                         
+
                         rl.Add(r);
                     }
 
                 }
                 response.Close();
-            }
-            catch (Exception e)
+            }catch(Exception e)
             {
-                MessageBox.Show("Line: "+e.Source+"/nMessage:"+e.Message+ "/nStacktrace/n"+e.StackTrace);
+                Console.WriteLine(e.Message);
             }
 
-            return rl;
+                return rl;
         }
     }
 }

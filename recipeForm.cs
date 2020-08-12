@@ -85,7 +85,7 @@ namespace TheGoodRecipe
             txt_Servings.Text = recipe.Servings.ToString();
             for (int i=0;i<recipe.Ingredients.Count();i++)
             {
-                list_ingredients.Items.Add(recipe.Ingredients[i]);
+                list_ingredients.Items.Add(recipe.Ingredients[i].Name);
             }
             //for (int i = 0; i < recipe.Instructions.Count(); i++)
             //{

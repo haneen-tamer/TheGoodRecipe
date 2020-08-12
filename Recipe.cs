@@ -12,6 +12,7 @@ namespace TheGoodRecipe
         private string ID;
         private int servings;
         private int readyInMinutes;
+        private int likes;
         private String title;
         private String sourceURL="wwwdbwec";
         private String sourceName;
@@ -21,7 +22,7 @@ namespace TheGoodRecipe
         private float calories;
         private float pricePerServing;
         private String imageURL;
-        private string[] ingredients;
+        private Ingredient[] ingredients;
         //private Cuisines cuisines;
         //private Dishtypes dishTypes;
         #endregion
@@ -29,6 +30,10 @@ namespace TheGoodRecipe
         #region Getters and Setters
         public string ID1 { get => ID; set => ID = value; }
         public int Servings { get => servings; set => servings = value; }
+
+        public int getLikes() { return likes; }
+        public void setLikes(int l) { likes = l; }
+
         public int ReadyInMinutes { get => readyInMinutes; set => readyInMinutes = value; }
         public string Title { get => title; set => title = value; }
         public string SourceURL { get => sourceURL; set => sourceURL = value; }
@@ -39,7 +44,7 @@ namespace TheGoodRecipe
         public float Calories { get => calories; set => calories = value; }
         public float PricePerServing { get => pricePerServing; set => pricePerServing = value; }
         public string ImageURL { get => imageURL; set => imageURL = value; }
-        public string[] Ingredients { get => ingredients; set => ingredients = value; }
+        public Ingredient[] Ingredients { get => ingredients; set => ingredients = value; }
         #endregion
 
     }
