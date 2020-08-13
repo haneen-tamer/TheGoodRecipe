@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -106,6 +107,15 @@ namespace TheGoodRecipe
                 row.Add(all_reviews[i].getstarRating().ToString());
 
                 Reviews_dgv.Rows.Add(row.ToArray());
+            }
+
+            WebRequest request = WebRequest.Create(recipe.ImageURL);
+            using (var response = request.GetResponse())
+            {
+                using (var str = response.GetResponseStream())
+                {
+                    picture_recipe.Image = Bitmap.FromStream(str);
+                }
             }
         }
 
