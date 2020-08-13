@@ -48,7 +48,18 @@ namespace TheGoodRecipe
 
         private void button2_Click(object sender, EventArgs e)
         {
+            IngredientsAmount.Items.Clear();
             int amount = int.Parse(txt_NumOfServings.Text);
+            IngredientsPanel.Visible = true;
+            Dictionary<int, float> c= IngredientAmountCalculator.calculateIngredientAmount(recipe,amount);
+            for(int i=0;i<c.Count;i++)
+            {
+
+                IngredientsAmount.Items.Add(c[i]+" "+recipe.Ingredients[i].Unit+" "+ recipe.Ingredients[i].Name);
+
+            }
+            
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -73,21 +84,42 @@ namespace TheGoodRecipe
             //image
             //Star rating
             //radiobtn ratings
+            if (UserManager.getInstance().IsLoogedin())
+            {
 
+                logout_btn.Visible = true;
+                login_btn.Visible = false;
+            }
+            else
+            {
+                login_btn.Visible = true;
+                logout_btn.Visible = false;
+            }
+
+            IngredientsPanel.Visible = false;
             RecipeName.Text = recipe.Title;
+            label2.Text = recipe.Rating.ToString();
             txt_ReadyInMinutes.Text = recipe.ReadyInMinutes.ToString();
             txt_PricePerServing.Text = recipe.PricePerServing.ToString();
-            txt_Calories.Text = recipe.Calories.ToString();
             txt_HealthScore.Text = recipe.HealthScore.ToString();
             txt_Servings.Text = recipe.Servings.ToString();
             for (int i=0;i<recipe.Ingredients.Count();i++)
             {
-                list_ingredients.Items.Add(recipe.Ingredients[i].Name);
+                list_ingredients.Items.Add(recipe.Ingredients[i].Amount+" "+ recipe.Ingredients[i].Unit + " "+ recipe.Ingredients[i].Name);
+               
             }
-            //for (int i = 0; i < recipe.Instructions.Count(); i++)
-            //{
-            //    list_instructions.Items.Add(recipe.Instructions[i]);
-            //}
+            if(recipe.Instructions.Count()==0)
+            {
+                list_instructions.Items.Add("Just mix everything together");
+            }
+            else
+            {
+                for (int i = 0; i < recipe.Instructions.Count(); i++)
+                {
+                    list_instructions.Items.Add(recipe.Instructions[i]);
+                }
+
+            }
 
             all_reviews = rrm.getReviewsByRecipeID(recipe.ID1);
 
@@ -132,6 +164,30 @@ namespace TheGoodRecipe
         {
             rate = new UserRatingStrategy();
             txt_rating.Text = rate.getRating(recipe).ToString();
+        }
+
+        private void back_btn_Click(object sender, EventArgs e)
+        {
+
+            Form1 f = new Form1();
+            f.Show();
+            this.Hide();
+            f.Closed += (s, args) => this.Close();
+        }
+
+        private void login_btn_Click(object sender, EventArgs e)
+        {
+            LoginForm login = new LoginForm();
+            login.Show();
+            login_btn.Visible = false;
+            logout_btn.Visible = true;
+        }
+
+        private void logout_btn_Click(object sender, EventArgs e)
+        {
+            UserManager.getInstance().logout();
+            login_btn.Visible = true;
+            logout_btn.Visible = false;
         }
     }
 }

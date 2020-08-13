@@ -177,8 +177,12 @@ namespace TheGoodRecipe
                             r.Ingredients[i] = x;
                         }
 
-                        r.Instructions = new List<string>();
-                        r.Instructions.Add(rec["instructions"].ToString());//TODO split instructions
+                       
+                        if(rec["instructions"]!=null)
+                        {
+                            r.Instructions= new List<string>(rec["instructions"].ToString().Split('.'));
+
+                        }
 
 
                     }

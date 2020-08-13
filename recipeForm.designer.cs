@@ -29,27 +29,20 @@
         private void InitializeComponent()
         {
             this.picture_recipe = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.RecipeName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_ReadyInMinutes = new System.Windows.Forms.TextBox();
-            this.txt_cuisines = new System.Windows.Forms.TextBox();
             this.txt_PricePerServing = new System.Windows.Forms.TextBox();
-            this.txt_DishTypes = new System.Windows.Forms.TextBox();
             this.txt_Servings = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.list_ingredients = new System.Windows.Forms.ListBox();
             this.label9 = new System.Windows.Forms.Label();
             this.list_instructions = new System.Windows.Forms.ListBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.txt_HealthScore = new System.Windows.Forms.TextBox();
-            this.txt_Calories = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_NumOfServings = new System.Windows.Forms.TextBox();
             this.Calculate_ingredients_btn = new System.Windows.Forms.Button();
@@ -62,30 +55,25 @@
             this.HealthRatingradioBtn = new System.Windows.Forms.RadioButton();
             this.txt_rating = new System.Windows.Forms.TextBox();
             this.Reviews_dgv = new System.Windows.Forms.DataGridView();
+            this.IngredientsPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.IngredientsAmount = new System.Windows.Forms.ListBox();
+            this.login_btn = new System.Windows.Forms.Button();
+            this.logout_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picture_recipe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Reviews_dgv)).BeginInit();
+            this.IngredientsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // picture_recipe
             // 
             this.picture_recipe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picture_recipe.Location = new System.Drawing.Point(41, 15);
-            this.picture_recipe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picture_recipe.Margin = new System.Windows.Forms.Padding(4);
             this.picture_recipe.Name = "picture_recipe";
             this.picture_recipe.Size = new System.Drawing.Size(537, 269);
             this.picture_recipe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picture_recipe.TabIndex = 0;
             this.picture_recipe.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1159, 65);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Favourite";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // RecipeName
             // 
@@ -119,16 +107,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "ReadyInMinutes";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(41, 346);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 17);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "cuisines";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -138,16 +116,6 @@
             this.label5.Size = new System.Drawing.Size(110, 17);
             this.label5.TabIndex = 6;
             this.label5.Text = "PricePerServing";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(328, 346);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 17);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "DishTypes";
             // 
             // label7
             // 
@@ -162,44 +130,26 @@
             // txt_ReadyInMinutes
             // 
             this.txt_ReadyInMinutes.Location = new System.Drawing.Point(164, 311);
-            this.txt_ReadyInMinutes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_ReadyInMinutes.Margin = new System.Windows.Forms.Padding(4);
             this.txt_ReadyInMinutes.Name = "txt_ReadyInMinutes";
             this.txt_ReadyInMinutes.ReadOnly = true;
             this.txt_ReadyInMinutes.Size = new System.Drawing.Size(132, 22);
             this.txt_ReadyInMinutes.TabIndex = 9;
             this.txt_ReadyInMinutes.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // txt_cuisines
-            // 
-            this.txt_cuisines.Location = new System.Drawing.Point(164, 346);
-            this.txt_cuisines.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txt_cuisines.Name = "txt_cuisines";
-            this.txt_cuisines.ReadOnly = true;
-            this.txt_cuisines.Size = new System.Drawing.Size(132, 22);
-            this.txt_cuisines.TabIndex = 10;
-            // 
             // txt_PricePerServing
             // 
             this.txt_PricePerServing.Location = new System.Drawing.Point(445, 308);
-            this.txt_PricePerServing.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_PricePerServing.Margin = new System.Windows.Forms.Padding(4);
             this.txt_PricePerServing.Name = "txt_PricePerServing";
             this.txt_PricePerServing.ReadOnly = true;
             this.txt_PricePerServing.Size = new System.Drawing.Size(132, 22);
             this.txt_PricePerServing.TabIndex = 11;
             // 
-            // txt_DishTypes
-            // 
-            this.txt_DishTypes.Location = new System.Drawing.Point(445, 346);
-            this.txt_DishTypes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txt_DishTypes.Name = "txt_DishTypes";
-            this.txt_DishTypes.ReadOnly = true;
-            this.txt_DishTypes.Size = new System.Drawing.Size(132, 22);
-            this.txt_DishTypes.TabIndex = 12;
-            // 
             // txt_Servings
             // 
             this.txt_Servings.Location = new System.Drawing.Point(445, 382);
-            this.txt_Servings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Servings.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Servings.Name = "txt_Servings";
             this.txt_Servings.ReadOnly = true;
             this.txt_Servings.Size = new System.Drawing.Size(132, 22);
@@ -208,7 +158,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(41, 460);
+            this.label8.Location = new System.Drawing.Point(42, 441);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(78, 17);
@@ -220,16 +170,16 @@
             // 
             this.list_ingredients.FormattingEnabled = true;
             this.list_ingredients.ItemHeight = 16;
-            this.list_ingredients.Location = new System.Drawing.Point(45, 480);
-            this.list_ingredients.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.list_ingredients.Location = new System.Drawing.Point(44, 462);
+            this.list_ingredients.Margin = new System.Windows.Forms.Padding(4);
             this.list_ingredients.Name = "list_ingredients";
-            this.list_ingredients.Size = new System.Drawing.Size(245, 132);
+            this.list_ingredients.Size = new System.Drawing.Size(245, 164);
             this.list_ingredients.TabIndex = 15;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(328, 460);
+            this.label9.Location = new System.Drawing.Point(328, 441);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(80, 17);
@@ -241,49 +191,30 @@
             // 
             this.list_instructions.FormattingEnabled = true;
             this.list_instructions.ItemHeight = 16;
-            this.list_instructions.Location = new System.Drawing.Point(332, 480);
-            this.list_instructions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.list_instructions.Location = new System.Drawing.Point(331, 462);
+            this.list_instructions.Margin = new System.Windows.Forms.Padding(4);
             this.list_instructions.Name = "list_instructions";
-            this.list_instructions.Size = new System.Drawing.Size(245, 132);
+            this.list_instructions.Size = new System.Drawing.Size(245, 164);
             this.list_instructions.TabIndex = 17;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(41, 385);
+            this.label11.Location = new System.Drawing.Point(41, 387);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(86, 17);
             this.label11.TabIndex = 19;
             this.label11.Text = "HealthScore";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(41, 425);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(59, 17);
-            this.label12.TabIndex = 20;
-            this.label12.Text = "Calories";
-            // 
             // txt_HealthScore
             // 
             this.txt_HealthScore.Location = new System.Drawing.Point(163, 382);
-            this.txt_HealthScore.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_HealthScore.Margin = new System.Windows.Forms.Padding(4);
             this.txt_HealthScore.Name = "txt_HealthScore";
             this.txt_HealthScore.ReadOnly = true;
             this.txt_HealthScore.Size = new System.Drawing.Size(133, 22);
             this.txt_HealthScore.TabIndex = 21;
-            // 
-            // txt_Calories
-            // 
-            this.txt_Calories.Location = new System.Drawing.Point(163, 421);
-            this.txt_Calories.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txt_Calories.Name = "txt_Calories";
-            this.txt_Calories.ReadOnly = true;
-            this.txt_Calories.Size = new System.Drawing.Size(132, 22);
-            this.txt_Calories.TabIndex = 22;
             // 
             // label10
             // 
@@ -299,7 +230,7 @@
             // txt_NumOfServings
             // 
             this.txt_NumOfServings.Location = new System.Drawing.Point(767, 626);
-            this.txt_NumOfServings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_NumOfServings.Margin = new System.Windows.Forms.Padding(4);
             this.txt_NumOfServings.Name = "txt_NumOfServings";
             this.txt_NumOfServings.Size = new System.Drawing.Size(209, 22);
             this.txt_NumOfServings.TabIndex = 24;
@@ -307,7 +238,7 @@
             // Calculate_ingredients_btn
             // 
             this.Calculate_ingredients_btn.Location = new System.Drawing.Point(1071, 623);
-            this.Calculate_ingredients_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Calculate_ingredients_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Calculate_ingredients_btn.Name = "Calculate_ingredients_btn";
             this.Calculate_ingredients_btn.Size = new System.Drawing.Size(100, 28);
             this.Calculate_ingredients_btn.TabIndex = 25;
@@ -329,7 +260,7 @@
             // Review_richTextBox
             // 
             this.Review_richTextBox.Location = new System.Drawing.Point(45, 655);
-            this.Review_richTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Review_richTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.Review_richTextBox.Name = "Review_richTextBox";
             this.Review_richTextBox.Size = new System.Drawing.Size(467, 117);
             this.Review_richTextBox.TabIndex = 27;
@@ -348,7 +279,7 @@
             // PostView_btn
             // 
             this.PostView_btn.Location = new System.Drawing.Point(521, 745);
-            this.PostView_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PostView_btn.Margin = new System.Windows.Forms.Padding(4);
             this.PostView_btn.Name = "PostView_btn";
             this.PostView_btn.Size = new System.Drawing.Size(100, 28);
             this.PostView_btn.TabIndex = 30;
@@ -358,19 +289,20 @@
             // 
             // back_btn
             // 
-            this.back_btn.Location = new System.Drawing.Point(1159, 745);
-            this.back_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.back_btn.Location = new System.Drawing.Point(1338, 106);
+            this.back_btn.Margin = new System.Windows.Forms.Padding(4);
             this.back_btn.Name = "back_btn";
             this.back_btn.Size = new System.Drawing.Size(100, 28);
             this.back_btn.TabIndex = 31;
             this.back_btn.Text = "Back";
             this.back_btn.UseVisualStyleBackColor = true;
+            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
             // UsersRatingradioBtn
             // 
             this.UsersRatingradioBtn.AutoSize = true;
             this.UsersRatingradioBtn.Location = new System.Drawing.Point(635, 137);
-            this.UsersRatingradioBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UsersRatingradioBtn.Margin = new System.Windows.Forms.Padding(4);
             this.UsersRatingradioBtn.Name = "UsersRatingradioBtn";
             this.UsersRatingradioBtn.Size = new System.Drawing.Size(106, 21);
             this.UsersRatingradioBtn.TabIndex = 32;
@@ -383,7 +315,7 @@
             // 
             this.HealthRatingradioBtn.AutoSize = true;
             this.HealthRatingradioBtn.Location = new System.Drawing.Point(635, 165);
-            this.HealthRatingradioBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HealthRatingradioBtn.Margin = new System.Windows.Forms.Padding(4);
             this.HealthRatingradioBtn.Name = "HealthRatingradioBtn";
             this.HealthRatingradioBtn.Size = new System.Drawing.Size(115, 21);
             this.HealthRatingradioBtn.TabIndex = 33;
@@ -394,8 +326,8 @@
             // 
             // txt_rating
             // 
-            this.txt_rating.Location = new System.Drawing.Point(844, 137);
-            this.txt_rating.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_rating.Location = new System.Drawing.Point(816, 136);
+            this.txt_rating.Margin = new System.Windows.Forms.Padding(4);
             this.txt_rating.Name = "txt_rating";
             this.txt_rating.ReadOnly = true;
             this.txt_rating.Size = new System.Drawing.Size(132, 22);
@@ -405,16 +337,57 @@
             // 
             this.Reviews_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Reviews_dgv.Location = new System.Drawing.Point(635, 241);
-            this.Reviews_dgv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Reviews_dgv.Margin = new System.Windows.Forms.Padding(4);
             this.Reviews_dgv.Name = "Reviews_dgv";
             this.Reviews_dgv.Size = new System.Drawing.Size(624, 353);
             this.Reviews_dgv.TabIndex = 35;
+            // 
+            // IngredientsPanel
+            // 
+            this.IngredientsPanel.Controls.Add(this.IngredientsAmount);
+            this.IngredientsPanel.Location = new System.Drawing.Point(691, 658);
+            this.IngredientsPanel.Name = "IngredientsPanel";
+            this.IngredientsPanel.Size = new System.Drawing.Size(549, 190);
+            this.IngredientsPanel.TabIndex = 36;
+            // 
+            // IngredientsAmount
+            // 
+            this.IngredientsAmount.FormattingEnabled = true;
+            this.IngredientsAmount.ItemHeight = 16;
+            this.IngredientsAmount.Location = new System.Drawing.Point(4, 4);
+            this.IngredientsAmount.Margin = new System.Windows.Forms.Padding(4);
+            this.IngredientsAmount.Name = "IngredientsAmount";
+            this.IngredientsAmount.Size = new System.Drawing.Size(245, 164);
+            this.IngredientsAmount.TabIndex = 16;
+            // 
+            // login_btn
+            // 
+            this.login_btn.Location = new System.Drawing.Point(1105, 106);
+            this.login_btn.Name = "login_btn";
+            this.login_btn.Size = new System.Drawing.Size(84, 28);
+            this.login_btn.TabIndex = 37;
+            this.login_btn.Text = "Login";
+            this.login_btn.UseVisualStyleBackColor = true;
+            this.login_btn.Click += new System.EventHandler(this.login_btn_Click);
+            // 
+            // logout_btn
+            // 
+            this.logout_btn.Location = new System.Drawing.Point(1214, 106);
+            this.logout_btn.Name = "logout_btn";
+            this.logout_btn.Size = new System.Drawing.Size(88, 28);
+            this.logout_btn.TabIndex = 38;
+            this.logout_btn.Text = "Logout";
+            this.logout_btn.UseVisualStyleBackColor = true;
+            this.logout_btn.Click += new System.EventHandler(this.logout_btn_Click);
             // 
             // recipeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1288, 786);
+            this.ClientSize = new System.Drawing.Size(1451, 843);
+            this.Controls.Add(this.logout_btn);
+            this.Controls.Add(this.login_btn);
+            this.Controls.Add(this.IngredientsPanel);
             this.Controls.Add(this.Reviews_dgv);
             this.Controls.Add(this.txt_rating);
             this.Controls.Add(this.HealthRatingradioBtn);
@@ -427,34 +400,28 @@
             this.Controls.Add(this.Calculate_ingredients_btn);
             this.Controls.Add(this.txt_NumOfServings);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.txt_Calories);
             this.Controls.Add(this.txt_HealthScore);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.list_instructions);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.list_ingredients);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txt_Servings);
-            this.Controls.Add(this.txt_DishTypes);
             this.Controls.Add(this.txt_PricePerServing);
-            this.Controls.Add(this.txt_cuisines);
             this.Controls.Add(this.txt_ReadyInMinutes);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.RecipeName);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.picture_recipe);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "recipeForm";
             this.Text = "recipeForm";
             this.Load += new System.EventHandler(this.recipeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picture_recipe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Reviews_dgv)).EndInit();
+            this.IngredientsPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -463,27 +430,20 @@
         #endregion
 
         private System.Windows.Forms.PictureBox picture_recipe;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label RecipeName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_ReadyInMinutes;
-        private System.Windows.Forms.TextBox txt_cuisines;
         private System.Windows.Forms.TextBox txt_PricePerServing;
-        private System.Windows.Forms.TextBox txt_DishTypes;
         private System.Windows.Forms.TextBox txt_Servings;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ListBox list_ingredients;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ListBox list_instructions;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txt_HealthScore;
-        private System.Windows.Forms.TextBox txt_Calories;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txt_NumOfServings;
         private System.Windows.Forms.Button Calculate_ingredients_btn;
@@ -496,5 +456,9 @@
         private System.Windows.Forms.RadioButton HealthRatingradioBtn;
         private System.Windows.Forms.TextBox txt_rating;
         private System.Windows.Forms.DataGridView Reviews_dgv;
+        private System.Windows.Forms.FlowLayoutPanel IngredientsPanel;
+        private System.Windows.Forms.ListBox IngredientsAmount;
+        private System.Windows.Forms.Button login_btn;
+        private System.Windows.Forms.Button logout_btn;
     }
 }

@@ -22,8 +22,10 @@ namespace TheGoodRecipe
         #region Functions
         public RecipeController(List<Recipe> recipeList, DataGridView dgv)
         {
+
             this.recipeList = recipeList;
             this.dgv = dgv;
+            this.dgv.Rows.Clear();
             //bind dgv with recipelist
             dgv.ReadOnly = true;
             string[] columns = { "Title", "Rating", "Ready In Minutes" };
@@ -44,7 +46,8 @@ namespace TheGoodRecipe
                 dgv.Rows.Add(row.ToArray());
 
             }
-            MessageBox.Show("here");
+            
+           // MessageBox.Show("here");
             //BindingSource bindingSource1 = new BindingSource();
             //bindingSource1.DataSource = recipeList;
             //dgv.DataSource = bindingSource1;

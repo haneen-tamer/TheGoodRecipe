@@ -65,6 +65,7 @@
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
     <Compile Include="Ingredient.cs" />
+    <Compile Include="IngredientAmountCalculator.cs" />
     <Compile Include="InvalidLoginException.cs" />
     <Compile Include="LoggedInState.cs" />
     <Compile Include="LoggedOutState.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="RecipeReviewStorageManager.cs" />
     <Compile Include="RecipesAPIHelper.cs" />
     <Compile Include="RecipeStorageManager.cs" />
+    <Compile Include="ServingException.cs" />
     <Compile Include="testForm.cs">
       <SubType>Form</SubType>
     </Compile>
