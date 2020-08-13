@@ -16,16 +16,13 @@ namespace TheGoodRecipe
             {
                 throw new ServingException();
             }
-            float factor = numServings / r.Servings;
+            float factor = ((float)numServings / (float)r.Servings);
+            
             for(int i=0;i<r.Ingredients.Length;i++)
             {
-                calc.Add(i, r.Ingredients[i].Amount * factor);
+                calc.Add(i, (float)r.Ingredients[i].Amount * factor);
             }
-            
-
-
             return calc;
-
         }
     }
 }

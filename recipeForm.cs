@@ -15,6 +15,10 @@ namespace TheGoodRecipe
     {
         RecipeReviewManager rrm;
         Recipe recipe;
+
+        UserManager um;
+        RecipeReview rv;
+
         RatingStrategy rate;
         List <RecipeReview> all_reviews;
         public recipeForm(RecipeReviewManager rrm, Recipe recipe)
@@ -74,11 +78,34 @@ namespace TheGoodRecipe
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (!um.IsLoogedin())
+            {
+                MessageBox.Show("You must Login/Sign up to be able to post a review.");
+                return;
+            }
+            string username = um.getCurrentUser().getUserName();
+            string recipeID = recipe.ID1;
+            string review = Review_richTextBox.Text.ToString();
+            DateTime dt = DateTime.Now;
+            double rates = recipe.Rating;
+            rv = new RecipeReview(username, recipeID, review, dt, rates);
 
+            //rrm.AddRecipeReview(rv);
+            UserManager.getInstance().postReview(rrm, rv);
+            rrm.saveReviews();
+
+            List<string> newReview = new List<string>();
+            newReview.Add(username);
+            newReview.Add(review);
+            newReview.Add(dt.ToString());
+            newReview.Add(rates.ToString());
+
+            Reviews_dgv.Rows.Add(newReview.ToArray());
         }
 
         private void recipeForm_Load(object sender, EventArgs e)
         {
+            um = UserManager.getInstance();
             //cuisine
             //dishtype
             //image

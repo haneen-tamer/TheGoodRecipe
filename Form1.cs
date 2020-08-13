@@ -68,7 +68,7 @@ namespace TheGoodRecipe
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             UserManager.getInstance().saveUsers();
-            rrm.saveReviews();
+            //rrm.saveReviews();
         }
 
 

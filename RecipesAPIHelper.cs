@@ -177,12 +177,13 @@ namespace TheGoodRecipe
                             r.Ingredients[i] = x;
                         }
 
-                       
-                        if(rec["instructions"]!=null)
+                        
+                        if(rec["instructions"].Equals("")/*rec["instructions"]!=null*/)
                         {
-                            r.Instructions= new List<string>(rec["instructions"].ToString().Split('.'));
-
+                            r.Instructions = new List<string>(rec["instructions"].ToString().Split('.'));
                         }
+                        else
+                            r.Instructions = new List<string>();
 
 
                     }

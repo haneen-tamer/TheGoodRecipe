@@ -20,7 +20,6 @@ namespace TheGoodRecipe
             foreach(RecipeReview r in allRecipeReviews)
             {
                 sw.WriteLine(r.getUsername() + "," + r.getrecipeID() + "," + r.getreviewText() + "," + r.gettimeStamp() + "," + r.getstarRating());
-
             }
             sw.Close();
             f.Close();
