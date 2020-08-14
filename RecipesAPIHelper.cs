@@ -37,7 +37,6 @@ namespace TheGoodRecipe
                         MessageBox.Show("api actin UPPP");
                     else if (((HttpWebResponse)response).StatusCode == HttpStatusCode.OK)
                     {
-                        MessageBox.Show("Loading");
                         using (Stream dataStream = response.GetResponseStream())
                         {
                             // Open the stream using a StreamReader for easy access.
@@ -89,7 +88,6 @@ namespace TheGoodRecipe
                     MessageBox.Show("api actin UPPP");
                 else if (((HttpWebResponse)response).StatusCode == HttpStatusCode.OK)
                 {
-                    MessageBox.Show("Loading");
                     using (Stream dataStream = response.GetResponseStream())
                     {
                         // Open the stream using a StreamReader for easy access.
