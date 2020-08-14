@@ -25,6 +25,9 @@ namespace TheGoodRecipe
         {
             LoginForm login = new LoginForm();
             login.Show();
+            logout_btn.Visible = true;
+            loginBtn.Visible = false;
+
         }
 
         private async void backBtn_Click(object sender, EventArgs e)
@@ -37,13 +40,21 @@ namespace TheGoodRecipe
         private async void Form1_Load(object sender, EventArgs e)
         {
             panel.Hide();
+            if(UserManager.getInstance().IsLoogedin())
+            {
+
+                logout_btn.Visible = true;
+                loginBtn.Visible = false;
+            }
+            else
+            {
+                loginBtn.Visible = true;
+                logout_btn.Visible = false;
+            }
             UserManager.getInstance().readUsers();
             rrm = new RecipeReviewManager();
             rrm.readReviews();
             rsm = new RecipesAPIHelper();
-            progressBar.Maximum = 100;
-            progressBar.Step = 1;
-            progressBar.Value = 0;
             recipeController = new RecipeController(await rsm.fetchRandomRecipesAsync(), dgv1);
         }
 
@@ -57,7 +68,7 @@ namespace TheGoodRecipe
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             UserManager.getInstance().saveUsers();
-            rrm.saveReviews();
+            //rrm.saveReviews();
         }
 
 
@@ -93,17 +104,24 @@ namespace TheGoodRecipe
         private async void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             
-            //backgroundWorker1.ReportProgress((6 * 100) / 100000);
+            
         }
 
         private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            progressBar.Value = e.ProgressPercentage;
+       
         }
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            progressBar.Visible = false;
+           
+        }
+
+        private void logout_btn_Click(object sender, EventArgs e)
+        {
+            UserManager.getInstance().logout();
+            loginBtn.Visible = true;
+            logout_btn.Visible = false;
         }
     }
 }

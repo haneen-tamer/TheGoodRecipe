@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace TheGoodRecipe
 {
-    public class RatingCalculator
+    class ServingException : Exception
     {
-        RatingStrategy strategy;
-
-        //public double CalculateRating()
-        //{
-
-        //}
     }
 }

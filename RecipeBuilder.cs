@@ -19,10 +19,10 @@ namespace TheGoodRecipe
 
         }
 
-        public void CalculateRating(RatingCalculator calculator)
-        {
-           // recipe.Rating = calculator.CalculateRating();
-        }
+        //public void CalculateRating(RatingCalculator calculator)
+        //{
+        //   // recipe.Rating = calculator.CalculateRating();
+        //}
 
         
     }

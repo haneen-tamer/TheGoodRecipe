@@ -14,8 +14,8 @@ namespace TheGoodRecipe
     class RecipesAPIHelper : RecipeStorageManager
     {
 
-        //private const string API_KEY = "df8c0251c12449a295a5c7b76c95b756";
-        private const string API_KEY = "ffcc9445764c4caea745dbe6155eef80";
+        private const string API_KEY = "df8c0251c12449a295a5c7b76c95b756";
+        //private const string API_KEY = "ffcc9445764c4caea745dbe6155eef80";
         public async Task<List<Recipe>> fetchRandomRecipesAsync()
 
         {
@@ -37,6 +37,7 @@ namespace TheGoodRecipe
                         MessageBox.Show("api actin UPPP");
                     else if (((HttpWebResponse)response).StatusCode == HttpStatusCode.OK)
                     {
+                       // MessageBox.Show("Loading");
                         using (Stream dataStream = response.GetResponseStream())
                         {
                             // Open the stream using a StreamReader for easy access.
@@ -88,6 +89,7 @@ namespace TheGoodRecipe
                     MessageBox.Show("api actin UPPP");
                 else if (((HttpWebResponse)response).StatusCode == HttpStatusCode.OK)
                 {
+                    MessageBox.Show("Loading");
                     using (Stream dataStream = response.GetResponseStream())
                     {
                         // Open the stream using a StreamReader for easy access.
@@ -175,8 +177,13 @@ namespace TheGoodRecipe
                             r.Ingredients[i] = x;
                         }
 
-                        r.Instructions = new List<string>();
-                        r.Instructions.Add(rec["instructions"].ToString());//TODO split instructions
+                        
+                        if(!rec["instructions"].Equals("")/*rec["instructions"]!=null*/)
+                        {
+                            r.Instructions = new List<string>(rec["instructions"].ToString().Split('.'));
+                        }
+                        else
+                            r.Instructions = new List<string>();
 
 
                     }
