@@ -13,7 +13,7 @@ namespace TheGoodRecipe
 
         void FetchRecipe(RecipeStorageManager rsm);
 
-        void CalculateRating(RatingCalculator rc);
+        //void CalculateRating(RatingCalculator rc);
 
         
 

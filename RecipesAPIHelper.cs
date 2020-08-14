@@ -37,7 +37,7 @@ namespace TheGoodRecipe
                         MessageBox.Show("api actin UPPP");
                     else if (((HttpWebResponse)response).StatusCode == HttpStatusCode.OK)
                     {
-                        MessageBox.Show("Loading");
+                       // MessageBox.Show("Loading");
                         using (Stream dataStream = response.GetResponseStream())
                         {
                             // Open the stream using a StreamReader for easy access.
@@ -178,7 +178,7 @@ namespace TheGoodRecipe
                         }
 
                         
-                        if(rec["instructions"].Equals("")/*rec["instructions"]!=null*/)
+                        if(!rec["instructions"].Equals("")/*rec["instructions"]!=null*/)
                         {
                             r.Instructions = new List<string>(rec["instructions"].ToString().Split('.'));
                         }

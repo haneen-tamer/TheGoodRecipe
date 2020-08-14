@@ -59,10 +59,9 @@ namespace TheGoodRecipe
             for(int i=0;i<c.Count;i++)
             {
 
-                IngredientsAmount.Items.Add(c[i]+" "+recipe.Ingredients[i].Unit+" "+ recipe.Ingredients[i].Name);
-
+                IngredientsAmount.Items.Add(c[i].ToString("0.00") + " " + recipe.Ingredients[i].Unit + " " + recipe.Ingredients[i].Name);
             }
-            
+
 
         }
 
@@ -151,7 +150,7 @@ namespace TheGoodRecipe
             all_reviews = rrm.getReviewsByRecipeID(recipe.ID1);
 
             Reviews_dgv.ReadOnly = true;
-            string[] columns = { "Name", "Review", "Date","Rating" };
+            string[] columns = { "Name", "Review", "Date" };
             Reviews_dgv.ColumnCount = columns.Length;
             for (int i = 0; i < columns.Length; i++)
             {
@@ -163,7 +162,7 @@ namespace TheGoodRecipe
                 row.Add(all_reviews[i].getUsername());
                 row.Add(all_reviews[i].getreviewText());
                 row.Add(all_reviews[i].gettimeStamp().ToString());
-                row.Add(all_reviews[i].getstarRating().ToString());
+               // row.Add(all_reviews[i].getstarRating().ToString());
 
                 Reviews_dgv.Rows.Add(row.ToArray());
             }
@@ -215,6 +214,11 @@ namespace TheGoodRecipe
             UserManager.getInstance().logout();
             login_btn.Visible = true;
             logout_btn.Visible = false;
+        }
+
+        private void Reviews_dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
