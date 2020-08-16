@@ -15,7 +15,9 @@ namespace TheGoodRecipe
     {
 
         //private const string API_KEY = "df8c0251c12449a295a5c7b76c95b756";
-        private const string API_KEY = "ffcc9445764c4caea745dbe6155eef80";
+        //private const string API_KEY = "ffcc9445764c4caea745dbe6155eef80";
+        //private const string API_KEY = "2edcc5f5f65142c3a29e28acb9de86fe";
+        private const string API_KEY = "737170500df7437b81d3f003166723a8";        
         public async Task<List<Recipe>> fetchRandomRecipesAsync()
 
         {
