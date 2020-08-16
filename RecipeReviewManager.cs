@@ -34,7 +34,7 @@ namespace TheGoodRecipe
             {
                 string line = sr.ReadLine();
                 string[] line_var = line.Split(',');
-                allRecipeReviews.Add(new RecipeReview(line_var[0], line_var[1], line_var[2], DateTime.Parse(line_var[3]), double.Parse(line_var[4])));
+                allRecipeReviews.Add(new RecipeReview(line_var[0], line_var[1], line_var[2], DateTime.Parse(line_var[3])));
             }
             sr.Close();
             f.Close();

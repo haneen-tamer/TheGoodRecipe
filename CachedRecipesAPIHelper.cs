@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace TheGoodRecipe
 {
@@ -22,8 +23,8 @@ namespace TheGoodRecipe
             if (!cache.ContainsKey("Random"))
             {
                 cache["Random"] = await service.fetchRandomRecipesAsync();
-            }
-                return cache["Random"];
+            } 
+            return cache["Random"];
         }
 
         public async Task<Recipe> fetchRecipeAsync(string id)

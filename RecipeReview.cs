@@ -13,7 +13,7 @@ namespace TheGoodRecipe
         string reviewText;
         DateTime timeStamp;
 
-        public RecipeReview(string userName, string recipeID, string reviewText, DateTime timeStamp, double starRating)
+        public RecipeReview(string userName, string recipeID, string reviewText, DateTime timeStamp)
         {
             this.userName = userName;
             this.recipeID = recipeID;

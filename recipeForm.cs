@@ -95,8 +95,7 @@ namespace TheGoodRecipe
             string recipeID = recipe.ID1;
             string review = Review_richTextBox.Text.ToString();
             DateTime dt = DateTime.Now;
-            double rates = recipe.Rating;
-            rv = new RecipeReview(username, recipeID, review, dt, rates);
+            rv = new RecipeReview(username, recipeID, review, dt);
 
             //rrm.AddRecipeReview(rv);
             UserManager.getInstance().postReview(rrm, rv);
@@ -106,7 +105,6 @@ namespace TheGoodRecipe
             newReview.Add(username);
             newReview.Add(review);
             newReview.Add(dt.ToString());
-            newReview.Add(rates.ToString());
 
             Reviews_dgv.Rows.Add(newReview.ToArray());
         }
@@ -203,11 +201,10 @@ namespace TheGoodRecipe
 
         private void back_btn_Click(object sender, EventArgs e)
         {
-
-            Form1 f = new Form1();
-            f.Show();
             this.Hide();
+            Form1 f = new Form1();
             f.Closed += (s, args) => this.Close();
+            f.Show();
         }
 
         private void login_btn_Click(object sender, EventArgs e)
