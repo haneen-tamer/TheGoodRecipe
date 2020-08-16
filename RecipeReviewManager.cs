@@ -19,7 +19,7 @@ namespace TheGoodRecipe
             StreamWriter sw = new StreamWriter(f);
             foreach(RecipeReview r in allRecipeReviews)
             {
-                sw.WriteLine(r.getUsername() + "," + r.getrecipeID() + "," + r.getreviewText() + "," + r.gettimeStamp() + "," + r.getstarRating());
+                sw.WriteLine(r.getUsername() + "," + r.getrecipeID() + "," + r.getreviewText() + "," + r.gettimeStamp());
             }
             sw.Close();
             f.Close();
