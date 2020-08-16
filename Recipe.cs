@@ -19,7 +19,6 @@ namespace TheGoodRecipe
         private List<String> instructions;
         private double rating;
         private double healthScore;
-        private float calories;
         private float pricePerServing;
         private String imageURL;
         private Ingredient[] ingredients;
@@ -41,7 +40,6 @@ namespace TheGoodRecipe
         public List<string> Instructions { get => instructions; set => instructions = value; }
         public double Rating { get => rating; set => rating = value; }
         public double HealthScore { get => healthScore; set => healthScore = value; }
-        public float Calories { get => calories; set => calories = value; }
         public float PricePerServing { get => pricePerServing; set => pricePerServing = value; }
         public string ImageURL { get => imageURL; set => imageURL = value; }
         public Ingredient[] Ingredients { get => ingredients; set => ingredients = value; }
