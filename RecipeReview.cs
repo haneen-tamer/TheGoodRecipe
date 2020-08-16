@@ -12,7 +12,6 @@ namespace TheGoodRecipe
         string recipeID;
         string reviewText;
         DateTime timeStamp;
-        double starRating;
 
         public RecipeReview(string userName, string recipeID, string reviewText, DateTime timeStamp, double starRating)
         {
@@ -20,7 +19,6 @@ namespace TheGoodRecipe
             this.recipeID = recipeID;
             this.reviewText = reviewText;
             this.timeStamp = timeStamp;
-            this.starRating = starRating;
         }
 
         public void setUsername (string username)
@@ -61,19 +59,11 @@ namespace TheGoodRecipe
 
         public DateTime gettimeStamp()
         {
-            return timeStamp
-;
+            return timeStamp;
+
         }
 
-        public void setstarRating(double starrating)
-        {
-            this.starRating = starrating;
-        }
-
-        public double getstarRating()
-        {
-            return starRating;
-        }
+      
         
     }
 }
