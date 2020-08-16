@@ -54,7 +54,7 @@ namespace TheGoodRecipe
             UserManager.getInstance().readUsers();
             rrm = new RecipeReviewManager();
             rrm.readReviews();
-            rsm = new RecipesAPIHelper();
+            rsm = new CachedRecipesAPIHelper(new RecipesAPIHelper());
             recipeController = new RecipeController(await rsm.fetchRandomRecipesAsync(), dgv1);
         }
 
@@ -72,12 +72,12 @@ namespace TheGoodRecipe
         }
 
 
-        private async void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgv1.Columns[e.ColumnIndex].Name == "ViewRecipeCol")
             {
                 this.Hide();
-                recipeForm recipe = new recipeForm(rrm, await rsm.fetchRecipeAsync(recipeController.getSelectedRecipe().ID1));
+                recipeForm recipe = new recipeForm(rrm, recipeController.getSelectedRecipe());
                 recipe.Closed += (s, args) => this.Close();
                 recipe.Show();
 
@@ -89,12 +89,12 @@ namespace TheGoodRecipe
 
         }
 
-        private async void dgvSearch_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private  void dgvSearch_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvSearch.Columns[e.ColumnIndex].Name == "sViewRecipeCol")
             {
                 this.Hide();
-                recipeForm recipe = new recipeForm(rrm, await rsm.fetchRecipeAsync(recipeController.getSelectedRecipe().ID1));
+                recipeForm recipe = new recipeForm(rrm, recipeController.getSelectedRecipe());
                 recipe.Closed += (s, args) => this.Close();
                 recipe.Show();
 

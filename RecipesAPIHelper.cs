@@ -20,110 +20,7 @@ namespace TheGoodRecipe
 
         {
             List<Recipe> rl = new List<Recipe>();
-            //for (int c = 0; c < 5; c++)
-            //{
-                WebRequest request = WebRequest.Create("https://api.spoonacular.com/recipes/random" +
-                    "?apiKey=" + API_KEY);
-                request.Credentials = CredentialCache.DefaultCredentials;
-                try
-                {
-                    WebResponse response = await request.GetResponseAsync();
-
-                    if (((HttpWebResponse)response).StatusCode == HttpStatusCode.NotFound)
-                        MessageBox.Show("not foun cuz yay");
-                    else if (((HttpWebResponse)response).StatusCode == HttpStatusCode.BadGateway)
-                        MessageBox.Show("internet is crazy");
-                    else if (((HttpWebResponse)response).StatusCode == HttpStatusCode.Unauthorized)
-                        MessageBox.Show("api actin UPPP");
-                    else if (((HttpWebResponse)response).StatusCode == HttpStatusCode.OK)
-                    {
-                       // MessageBox.Show("Loading");
-                        using (Stream dataStream = response.GetResponseStream())
-                        {
-                            // Open the stream using a StreamReader for easy access.
-                            StreamReader sreader = new StreamReader(dataStream);
-                            // Read the content.
-                            string responseFromServer = sreader.ReadToEnd();
-                            //parse json object
-                            JToken outer = JToken.Parse(responseFromServer);
-                            JArray inner = outer["recipes"].Value<JArray>();
-                            Recipe r;
-                            for (int i = 0; i < inner.Count; i++)
-                            {
-                                JObject rec = inner[i].Value<JObject>();
-                                r = new Recipe();
-                                r.Title = rec["title"].ToString();
-                                r.ID1 = rec["id"].ToString();
-                                r.ImageURL = rec["image"].ToString();
-                                //r.SourceName = rec["sourceName"].ToString();
-                                //r.SourceURL = rec["sourceUrl"].ToString();
-                                r.Rating = double.Parse(rec["spoonacularScore"].ToString());
-                                r.ReadyInMinutes = int.Parse(rec["readyInMinutes"].ToString());
-
-                                rl.Add(r);
-                            }
-
-                        }
-                    }
-                    response.Close();
-                }
-
-                catch (Exception e)
-                {
-                    MessageBox.Show("Line: " + e.Source + "/nMessage:" + e.Message + "/nStacktrace/n" + e.StackTrace);
-                }
-            // }
-
-            WebRequest request2 = WebRequest.Create("https://api.spoonacular.com/recipes/"+rl[0].ID1 
-                +"/similar"+ "?apiKey=" + API_KEY);
-            request.Credentials = CredentialCache.DefaultCredentials;
-            try
-            {
-                WebResponse response = await request2.GetResponseAsync();
-
-                if (((HttpWebResponse)response).StatusCode == HttpStatusCode.NotFound)
-                    MessageBox.Show("not foun cuz yay");
-                else if (((HttpWebResponse)response).StatusCode == HttpStatusCode.BadGateway)
-                    MessageBox.Show("internet is crazy");
-                else if (((HttpWebResponse)response).StatusCode == HttpStatusCode.Unauthorized)
-                    MessageBox.Show("api actin UPPP");
-                else if (((HttpWebResponse)response).StatusCode == HttpStatusCode.OK)
-                {
-                    MessageBox.Show("Loading");
-                    using (Stream dataStream = response.GetResponseStream())
-                    {
-                        // Open the stream using a StreamReader for easy access.
-                        StreamReader sreader = new StreamReader(dataStream);
-                        // Read the content.
-                        string responseFromServer = sreader.ReadToEnd();
-                        //parse json object
-                        JToken outer = JToken.Parse(responseFromServer);
-                        JArray arr = outer.Value<JArray>();
-                        Recipe r;
-                        for (int i = 0; i < arr.Count; i++)
-                        {
-                            JObject rec = arr[i].Value<JObject>();
-                            r = new Recipe();
-                            r.Title = rec["title"].ToString();
-                            r.ID1 = rec["id"].ToString();
-                            //r.ImageURL = rec["image"].ToString();
-                            //r.SourceName = rec["sourceName"].ToString();
-                            //r.SourceURL = rec["sourceUrl"].ToString();
-                            //r.Rating = double.Parse(rec["spoonacularScore"].ToString());
-                            r.ReadyInMinutes = int.Parse(rec["readyInMinutes"].ToString());
-
-                            rl.Add(r);
-                        }
-
-                    }
-                }
-                response.Close();
-            }
-
-            catch (Exception e)
-            {
-                MessageBox.Show("Line: " + e.Source + "/nMessage:" + e.Message + "/nStacktrace/n" + e.StackTrace);
-            }
+            rl = await this.searchRecipesAsync("");
             return rl;
         }
 
@@ -200,6 +97,7 @@ namespace TheGoodRecipe
         public async Task<List<Recipe>> searchRecipesAsync(string query)
         {
             List<Recipe> rl = new List<Recipe>();
+            List<string> ids = new List<string>();
             query = query.Replace(" ", "%20");
             WebRequest request = WebRequest.Create("https://api.spoonacular.com/recipes/complexSearch?apiKey=" +
                 API_KEY + "&query="+ query);
@@ -229,19 +127,82 @@ namespace TheGoodRecipe
                         for (int i = 0; i < inner.Count; i++)
                         {
                             JObject rec = inner[i].Value<JObject>();
-                            r = new Recipe();
-                            r.Title = rec["title"].ToString();
-                            r.ID1 = rec["id"].ToString();
-                            r.ImageURL = rec["image"].ToString();
-
-
-                            rl.Add(r);
+                            ids.Add(rec["id"].ToString());
                         }
 
                     }
                 }
                 response.Close();
-            }catch(Exception e)
+
+                string req = "https://api.spoonacular.com/recipes/informationBulk?apiKey=" +
+                API_KEY + "&ids=";
+                for (int i = 0; i < ids.Count; i++)
+                {
+                    req += ids[i];
+                    if (i < ids.Count - 1) req += ",";
+                }
+                WebRequest reqDetails = WebRequest.Create(req);
+                reqDetails.Credentials = CredentialCache.DefaultCredentials;
+                WebResponse responseDetails = await reqDetails.GetResponseAsync();
+                if (((HttpWebResponse)responseDetails).StatusCode == HttpStatusCode.NotFound)
+                    MessageBox.Show("not foun cuz yay");
+                else if (((HttpWebResponse)responseDetails).StatusCode == HttpStatusCode.BadGateway)
+                    MessageBox.Show("internet is crazy");
+                else if (((HttpWebResponse)responseDetails).StatusCode == HttpStatusCode.Unauthorized)
+                    MessageBox.Show("api actin UPPP");
+                else if (((HttpWebResponse)responseDetails).StatusCode == HttpStatusCode.OK)
+                {
+                    using (Stream dataStream = responseDetails.GetResponseStream())
+                    {
+                        StreamReader sreader = new StreamReader(dataStream);
+                        string responseFromServer = sreader.ReadToEnd();
+                        JToken outer = JToken.Parse(responseFromServer);
+                        JArray inner = outer.Value<JArray>();
+                        for (int i = 0; i < inner.Count; i++)
+                        {
+                            JObject rec = inner[i].Value<JObject>();
+                            Recipe r = new Recipe();
+                            r.Title = rec["title"].ToString();
+                            r.ID1 = rec["id"].ToString();
+                            r.ImageURL = rec["image"].ToString();
+                            r.SourceName = rec["sourceName"].ToString();
+                            r.SourceURL = rec["sourceUrl"].ToString();
+                            r.Rating = double.Parse(rec["spoonacularScore"].ToString());
+                            r.ReadyInMinutes = int.Parse(rec["readyInMinutes"].ToString());
+                            r.HealthScore = double.Parse(rec["healthScore"].ToString());
+                            r.PricePerServing = float.Parse(rec["pricePerServing"].ToString());
+                            r.Servings = int.Parse(rec["servings"].ToString());
+                            r.setLikes(int.Parse(rec["aggregateLikes"].ToString()));
+                            JArray ingredients = rec["extendedIngredients"].Value<JArray>();
+                            r.Ingredients = new Ingredient[ingredients.Count];
+                            for (int j = 0; j < ingredients.Count; j++)
+                            {
+                                JObject ing = ingredients[j].Value<JObject>();
+                                Ingredient x = new Ingredient();
+                                x.ID1 = int.Parse(ing["id"].ToString());
+                                x.Amount = float.Parse(ing["amount"].ToString());
+                                x.Unit = ing["unit"].ToString();
+                                x.Name = ing["name"].ToString();
+                                r.Ingredients[j] = x;
+                            }
+
+
+                            if (!rec["instructions"].Equals(""))
+                            {
+                                r.Instructions = new List<string>(rec["instructions"].ToString().Split('.'));
+                            }
+                            else
+                                r.Instructions = new List<string>();
+                            rl.Add(r);
+
+                        }
+
+
+                    }
+                }
+                responseDetails.Close();
+            }
+            catch(Exception e)
             {
                 Console.WriteLine(e.Message);
             }

@@ -9,19 +9,17 @@ namespace TheGoodRecipe
     class CachedRecipesAPIHelper : RecipeStorageManager
     {
         private RecipeStorageManager service;
-        private Boolean NeedReset;
         private Dictionary<string, List<Recipe>> cache;
 
         public CachedRecipesAPIHelper(RecipeStorageManager rsm)
         {
-            NeedReset = false;
             service = rsm;
             cache = new Dictionary<string, List<Recipe>>();
         }
         
         public async Task<List<Recipe>> fetchRandomRecipesAsync()
         {
-            if (!cache.ContainsKey("Random") || NeedReset)
+            if (!cache.ContainsKey("Random"))
             {
                 cache["Random"] = await service.fetchRandomRecipesAsync();
             }
@@ -30,16 +28,21 @@ namespace TheGoodRecipe
 
         public async Task<Recipe> fetchRecipeAsync(string id)
         {
-            throw new NotImplementedException();
+            if (!cache.ContainsKey(id))
+            {
+                cache[id] = new List<Recipe>();
+                cache[id].Add( await service.fetchRecipeAsync(id));
+            }
+            return cache[id][0];
         }
 
         public async Task<List<Recipe>> searchRecipesAsync(string query)
         {
-            if (!cache.ContainsKey("query") || NeedReset)
+            if (!cache.ContainsKey(query))
             {
-                cache["Random"] = await service.searchRecipesAsync(query);
+                cache[query] = await service.searchRecipesAsync(query);
             }
-            return cache["Random"];
+            return cache[query];
         }
     }
 }
