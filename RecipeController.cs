@@ -46,15 +46,7 @@ namespace TheGoodRecipe
                 dgv.Rows.Add(row.ToArray());
 
             }
-<<<<<<< HEAD
-=======
-            
-           // MessageBox.Show("here");
-            //BindingSource bindingSource1 = new BindingSource();
-            //bindingSource1.DataSource = recipeList;
-            //dgv.DataSource = bindingSource1;
-            
->>>>>>> de05d568d598c47c110de34bf5ad458c86f5cc97
+
         }
 
         public Recipe getSelectedRecipe()
