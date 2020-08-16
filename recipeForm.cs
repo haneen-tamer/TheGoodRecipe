@@ -55,7 +55,14 @@ namespace TheGoodRecipe
             IngredientsAmount.Items.Clear();
             int amount = int.Parse(txt_NumOfServings.Text);
             IngredientsPanel.Visible = true;
+            try
+            {
+
             Dictionary<int, float> c= IngredientAmountCalculator.calculateIngredientAmount(recipe,amount);
+            }catch(ServingException se)
+            {
+                MessageBox.Show("Servings information not available!");
+            }
             for(int i=0;i<c.Count;i++)
             {
 
