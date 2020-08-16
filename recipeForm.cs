@@ -58,16 +58,18 @@ namespace TheGoodRecipe
             try
             {
 
-            Dictionary<int, float> c= IngredientAmountCalculator.calculateIngredientAmount(recipe,amount);
-            }catch(ServingException se)
+                Dictionary<int, float> c= IngredientAmountCalculator.calculateIngredientAmount(recipe,amount);
+                for (int i = 0; i < c.Count; i++)
+                {
+
+                    IngredientsAmount.Items.Add(c[i].ToString("0.00") + " " + recipe.Ingredients[i].Unit + " " + recipe.Ingredients[i].Name);
+                }
+            }
+            catch(ServingException se)
             {
                 MessageBox.Show("Servings information not available!");
             }
-            for(int i=0;i<c.Count;i++)
-            {
-
-                IngredientsAmount.Items.Add(c[i].ToString("0.00") + " " + recipe.Ingredients[i].Unit + " " + recipe.Ingredients[i].Name);
-            }
+            
 
 
         }
